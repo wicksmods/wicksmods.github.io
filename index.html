@@ -60,47 +60,59 @@
   .container { max-width: 1140px; margin: 0 auto; padding: 0 28px; }
 
   /* Hero ──────────────────────────────────────────────────── */
+  /* A wall of in-game captures from across the suite (WickSuite
+     thumbnails.html, target site_hero) behind the words, faded into the
+     void where they sit. The link card is cut from the same wall, so
+     the page picks up where the post left off. */
   .hero {
-    padding: 110px 28px 100px;
-    text-align: center;
     position: relative;
-    background:
-      radial-gradient(ellipse at 50% 0%, rgba(79,199,120,0.08) 0%, transparent 60%),
-      radial-gradient(ellipse at 30% 70%, rgba(56,48,88,0.25) 0%, transparent 50%);
+    overflow: hidden;
+    min-height: min(780px, 94vh);
+    display: flex; align-items: center;
+    padding: 100px 0 90px;
+    border-bottom: 1px solid var(--border);
   }
+  .hero-wall {
+    position: absolute; inset: 0;
+    background: url('images/suite/site-hero.jpg') 60% 50% / cover no-repeat;
+  }
+  .hero-wall::after {
+    content: ''; position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, var(--void) 0%, var(--void) 32%, rgba(13,10,20,0.92) 44%, rgba(13,10,20,0.5) 60%, rgba(13,10,20,0.18) 100%),
+      linear-gradient(0deg, var(--void) 0%, rgba(13,10,20,0) 22%),
+      linear-gradient(180deg, rgba(13,10,20,0.7) 0%, rgba(13,10,20,0) 16%);
+  }
+  /* Fel L-brackets on the hero's corners, 10px arms at 2px like the cards */
+  .hero .hb { position: absolute; z-index: 1; width: 22px; height: 22px; pointer-events: none; }
+  .hero .hb.tl { top: 18px; left: 18px; border-top: 2px solid var(--fel); border-left: 2px solid var(--fel); }
+  .hero .hb.tr { top: 18px; right: 18px; border-top: 2px solid var(--fel); border-right: 2px solid var(--fel); }
+  .hero .hb.bl { bottom: 18px; left: 18px; border-bottom: 2px solid var(--fel); border-left: 2px solid var(--fel); }
+  .hero .hb.bt { bottom: 18px; right: 18px; border-bottom: 2px solid var(--fel); border-right: 2px solid var(--fel); }
+  .hero-inner { position: relative; z-index: 1; width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 28px; }
+  .hero-copy { max-width: 560px; text-shadow: 0 2px 16px rgba(13,10,20,0.9); }
   .hero-eyebrow {
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     letter-spacing: 0.45em;
     text-transform: uppercase;
     color: var(--fel);
-    margin-bottom: 26px;
-    display: inline-block;
-    position: relative;
-    padding: 0 36px;
+    margin-bottom: 28px;
+    display: flex; align-items: center; gap: 14px;
   }
-  .hero-eyebrow::before, .hero-eyebrow::after {
-    content: '';
-    position: absolute;
-    top: 50%; transform: translateY(-50%);
-    width: 24px; height: 1px;
-    background: var(--fel);
-    opacity: 0.6;
-  }
-  .hero-eyebrow::before { left: 0; }
-  .hero-eyebrow::after  { right: 0; }
+  .hero-eyebrow::before { content: ''; width: 28px; height: 1px; background: var(--fel); opacity: 0.6; }
+  .lockup { display: inline-flex; flex-direction: column; align-items: stretch; margin-bottom: 34px; }
   /* Wordmark — flame-as-i. Glyph height 1.08em with -0.06em side margins
      so the flame slots between W and c-k-'-s like a hot ligature. */
   .wordmark {
     font-family: 'Cinzel', serif;
     font-weight: 900;
-    font-size: 132px;
+    font-size: 112px;
     letter-spacing: -0.04em;
     line-height: 1;
     color: var(--text);
     white-space: nowrap;
     position: relative;
-    margin-bottom: 6px;
   }
   .wordmark svg {
     /* Width derived from viewBox aspect (40/91 ≈ 0.475em). Pinned explicitly
@@ -114,27 +126,60 @@
       drop-shadow(0 0 0.08em rgba(79,199,120,0.35));
   }
   .wordmark .apo { color: var(--fel); }
+  /* MODS sits right-aligned under "ck's", the way the artwork sets SUITE */
   .wordmark-sub {
     font-family: 'Cinzel', serif;
     font-weight: 900;
-    font-size: 38px;
+    font-size: 30px;
     letter-spacing: 0.4em;
     line-height: 1;
     color: var(--fel);
-    margin-bottom: 28px;
-    /* Slight indent so MODS sits visually under "ck's" rather than dead-centered */
-    padding-left: 0.4em;
+    text-align: right;
+    margin: 8px -0.4em 0 0;
+  }
+  .hero-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    color: var(--text);
+    margin-bottom: 18px;
   }
   .hero-tagline {
-    font-size: 22px;
-    font-weight: 300;
+    font-size: 18px;
     color: var(--text-dim);
-    max-width: 580px;
-    margin: 0 auto 44px;
-    line-height: 1.5;
+    max-width: 520px;
+    margin-bottom: 34px;
+    line-height: 1.6;
   }
-  .hero-tagline em { color: var(--text); font-style: normal; font-weight: 500; }
-  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  /* The live download count, hydrated from data/downloads.json */
+  .hero-proof {
+    display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 14px;
+    max-width: 520px;
+    margin-top: 38px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .stat-number {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--text);
+    /* Prevent layout jitter when JS swaps the number after fetch */
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-label, .hero-links {
+    font-family: 'Space Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .hero-links { margin-left: auto; }
+  .hero-links a { color: var(--text-dim); }
+  .hero-links a:hover { color: var(--fel); }
 
   /* Buttons ───────────────────────────────────────────────── */
   .btn {
@@ -152,61 +197,6 @@
   .btn:hover { border-color: var(--fel); color: var(--fel); }
   .btn.primary { color: var(--fel); border-color: var(--fel); }
   .btn.primary:hover { background: rgba(79,199,120,0.10); }
-
-  /* Stat band ───────────────────────────────────────────────── */
-  .stat-band {
-    padding: 70px 28px 80px;
-    text-align: center;
-    position: relative;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    background:
-      radial-gradient(ellipse at 50% 50%, rgba(79,199,120,0.06) 0%, transparent 65%),
-      var(--void);
-  }
-  .stat-eyebrow {
-    font-family: 'Space Mono', monospace;
-    font-size: 10px;
-    letter-spacing: 0.5em;
-    text-transform: uppercase;
-    color: var(--fel);
-    margin-bottom: 22px;
-    opacity: 0.85;
-  }
-  .stat-number {
-    font-family: 'Cinzel', serif;
-    font-weight: 900;
-    font-size: 132px;
-    letter-spacing: -0.03em;
-    line-height: 0.95;
-    /* Lifted-from-locked muted purple (#383058 at ~50% lightness) — sits
-       behind the cream wordmark visually so the headline still wins. */
-    color: #7568a3;
-    /* Faint matching purple aura */
-    text-shadow:
-      0 0 28px rgba(117, 104, 163, 0.22),
-      0 0 64px rgba(56, 48, 88, 0.18);
-    /* Prevent layout jitter when JS swaps the number after fetch */
-    font-variant-numeric: tabular-nums;
-    display: inline-block;
-  }
-  .stat-label {
-    font-family: 'Space Mono', monospace;
-    font-size: 12px;
-    letter-spacing: 0.42em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-top: 16px;
-  }
-  .stat-label .accent { color: var(--fel); }
-  @media (max-width: 800px) {
-    .stat-number { font-size: 88px; }
-    .stat-band { padding: 56px 28px 60px; }
-  }
-  @media (max-width: 480px) {
-    .stat-number { font-size: 64px; }
-    .stat-label { font-size: 10px; letter-spacing: 0.3em; }
-  }
 
   /* Section labels ─────────────────────────────────────────── */
   .section-label {
@@ -296,6 +286,55 @@
   .card-btn.cf { color: var(--fel); border-color: var(--fel); }
   .card-btn.cf:hover { background: rgba(79,199,120,0.10); }
 
+  /* Class kits ───────────────────────────────────────────── */
+  /* One tile per class, the class colour along the top edge. */
+  .section-intro {
+    text-align: center; color: var(--text-dim); font-size: 15px;
+    max-width: 560px; margin: -10px auto 30px;
+  }
+  .kits {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 100px;
+  }
+  .kit {
+    position: relative;
+    background: var(--shadow);
+    border: 1px solid var(--border);
+    padding: 20px 18px 14px;
+    display: flex; flex-direction: column;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .kit::before { content: ''; position: absolute; left: -1px; right: -1px; top: -1px; height: 2px; background: var(--cc); }
+  .kit:hover { border-color: var(--cc); transform: translateY(-2px); }
+  .kit-class {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--cc);
+    margin-bottom: 10px;
+  }
+  .kit-name {
+    font-family: 'Cinzel', serif; font-weight: 700;
+    font-size: 15px; line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .kit-name .apo { color: var(--fel); }
+  .kit-line { font-size: 13px; color: var(--text-dim); line-height: 1.5; flex: 1; margin-bottom: 16px; }
+  .kit-foot {
+    display: flex; align-items: center; gap: 14px;
+    padding-top: 12px; border-top: 1px solid var(--border);
+    font-family: 'Space Mono', monospace;
+    font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase;
+  }
+  .kit-foot a { color: var(--text-dim); }
+  .kit-foot a:hover { color: var(--fel); }
+  .kit-foot a.cf { color: var(--fel); }
+  .kit-foot a.cf:hover { color: var(--text); }
+  .kit-soon { color: #c8a84b; }
+  .kit-slash { margin-left: auto; color: var(--fel); opacity: 0.75; letter-spacing: 0.1em; text-transform: none; }
+
   /* "New" badge for fresh addons */
   .new-badge {
     position: absolute; top: 10px; right: 10px;
@@ -340,6 +379,7 @@
     font-size: 16px; color: var(--text-dim);
     max-width: 540px; margin: 0 auto 30px;
   }
+  .cta p.cta-alt { margin: 26px auto 0; font-size: 14px; }
 
   /* Footer ─────────────────────────────────────────────────── */
   footer {
@@ -355,15 +395,30 @@
   footer .row { margin-bottom: 8px; }
 
   /* Responsive ─────────────────────────────────────────────── */
-  @media (max-width: 800px) {
-    .wordmark { font-size: 84px; }
-    .wordmark-sub { font-size: 24px; letter-spacing: 0.35em; }
-    .hero { padding: 80px 28px 70px; }
-    .hero-tagline { font-size: 18px; }
+  @media (max-width: 1000px) {
+    .kits { grid-template-columns: repeat(2, 1fr); }
   }
-  @media (max-width: 480px) {
+  @media (max-width: 800px) {
+    .hero { min-height: 0; padding: 76px 0 60px; }
+    .hero-wall { background-position: 72% 0; }
+    .hero-wall::after {
+      background: linear-gradient(180deg, rgba(13,10,20,0.62) 0%, rgba(13,10,20,0.9) 45%, var(--void) 100%);
+    }
+    .hero .hb { width: 16px; height: 16px; }
+    .wordmark { font-size: 76px; }
+    .wordmark-sub { font-size: 21px; }
+    .hero-title { font-size: 34px; }
+    .hero-tagline { font-size: 16px; }
+    .hero-links { margin-left: 0; flex-basis: 100%; }
+  }
+  @media (max-width: 520px) {
+    .kits { grid-template-columns: 1fr; }
     .wordmark { font-size: 60px; }
-    .wordmark-sub { font-size: 18px; letter-spacing: 0.3em; }
+    .wordmark-sub { font-size: 17px; }
+    .hero-title { font-size: 29px; }
+    .hero-eyebrow { font-size: 10px; letter-spacing: 0.28em; }
+    .hero-eyebrow::before { display: none; }
+    .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
   }
 </style>
 </head>
@@ -386,27 +441,30 @@
 </svg>
 
 <section class="hero">
-  <div class="hero-eyebrow">World of Warcraft &middot; Forever</div>
-  <div class="wordmark">W<svg width="40" height="91"><use href="#flame-i"/></svg>ck<span class="apo">'</span>s</div>
-  <div class="wordmark-sub">MODS</div>
-  <div class="hero-tagline">
-    <em>A suite of precision addons.</em> One voice. One chrome. Rebuilt for Forever on a shared core, and written around the new addon rules rather than against them.
+  <div class="hero-wall" aria-hidden="true"></div>
+  <div class="hb tl"></div><div class="hb tr"></div><div class="hb bl"></div><div class="hb bt"></div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <div class="hero-eyebrow">World of Warcraft &middot; Forever</div>
+      <div class="lockup">
+        <div class="wordmark">W<svg width="40" height="91"><use href="#flame-i"/></svg>ck<span class="apo">'</span>s</div>
+        <div class="wordmark-sub">MODS</div>
+      </div>
+      <h1 class="hero-title">Rebuild your whole UI for&nbsp;Forever.</h1>
+      <p class="hero-tagline">Precision addons on one shared core. The whole interface in ten looks, bags and bank in one window, gear to chase while leveling and a kit for each class, all wearing the look you pick.</p>
+      <div class="hero-actions">
+        <a href="https://www.curseforge.com/members/wicksmods/projects" class="btn primary">Get it on CurseForge &rarr;</a>
+        <a href="#suite" class="btn">Browse the suite</a>
+      </div>
+      <!-- Every CurseForge project in the suite, both clients, summed by the -->
+      <!-- refresher in .github/workflows/refresh-cf-stats.yml. -->
+      <div class="hero-proof">
+        <span class="stat-number" id="total-downloads" data-default="7187">7,187</span>
+        <span class="stat-label">downloads on CurseForge</span>
+        <span class="hero-links"><a href="https://discord.gg/GWGTMhYBZY">Discord</a> &middot; <a href="https://github.com/Wicks-mods">GitHub</a></span>
+      </div>
+    </div>
   </div>
-  <div class="hero-actions">
-    <a href="https://www.curseforge.com/members/wicksmods/projects" class="btn primary">Get it on CurseForge &rarr;</a>
-    <a href="#suite" class="btn">Browse the Suite</a>
-    <a href="https://discord.gg/GWGTMhYBZY" class="btn">Discord &rarr;</a>
-    <a href="https://github.com/Wicks-mods" class="btn">GitHub &rarr;</a>
-  </div>
-</section>
-
-<!-- STAT BAND ───────────────────────────────────────────── -->
-<!-- Every CurseForge project in the suite, both clients, summed by the -->
-<!-- refresher in .github/workflows/refresh-cf-stats.yml every 6 hours. -->
-<section class="stat-band">
-  <div class="stat-eyebrow">— Downloaded and in use —</div>
-  <div class="stat-number" id="total-downloads" data-default="4647">4647</div>
-  <div class="stat-label">Downloads <span class="accent">·</span> CurseForge</div>
 </section>
 
 <section class="container" id="suite">
@@ -424,44 +482,9 @@
     <a href="https://www.curseforge.com/wow/addons/wicks-ui" class="btn">CurseForge &rarr;</a>
   </div>
 
-  <div class="section-label">The Forever Suite</div>
+  <div class="section-label">The addons</div>
 
   <div class="grid">
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-thumb">
-        <img src="images/core/thumb.png" alt="WickCore">
-      </div>
-      <div class="card-meta">
-        <div class="card-name">WickCore</div>
-        <div class="card-tagline">The floor everything else stands on. Brand chrome, profiles, themes, one options panel, and the shim that keeps the suite honest across clients.</div>
-        <div class="card-slash">/wickcore</div>
-        <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wickcore" class="card-btn cf">CurseForge</a>
-          <a href="https://github.com/Wicks-mods/WickCore" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="new-badge">New</div>
-      <div class="card-thumb">
-        <img src="images/ui/thumb.png" alt="Wick's UI">
-      </div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> UI</div>
-        <div class="card-tagline">The whole interface, in one look. Action bars, unit frames, nameplates, chat, the minimap, a threat meter and the game's own windows. Ten looks to start from, Classic among them. Full customization from there, and every part optional.</div>
-        <div class="card-slash">/wui</div>
-        <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-ui" class="card-btn cf">CurseForge</a>
-          <a href="/ui/" class="card-btn">Tour</a></div>
-      </div>
-    </div>
 
     <div class="card">
       <div class="br tl"><div class="h"></div><div class="v"></div></div>
@@ -507,7 +530,7 @@
       </div>
       <div class="card-meta">
         <div class="card-name"><span class="apo">Wick's</span> Gear</div>
-        <div class="card-tagline">What to chase while levelling, a browser for what drops where, and a paperdoll to try pieces on: right-click anything to see what it would do to your stats, green up and red down. Ships item ids and nothing else, so every number comes from your own client.</div>
+        <div class="card-tagline">What to chase while leveling, a browser for what drops where, and a paperdoll to try pieces on: right-click anything to see what it would do to your stats, green up and red down. Ships item ids and nothing else, so every number comes from your own client.</div>
         <div class="card-slash">/wgear</div>
         <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-gear" class="card-btn cf">CurseForge</a>
           <a href="https://github.com/Wicks-mods/WicksGear" class="card-btn">GitHub</a></div>
@@ -556,123 +579,6 @@
       <div class="br tr"><div class="h"></div><div class="v"></div></div>
       <div class="br bl"><div class="h"></div><div class="v"></div></div>
       <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Totems and Things</div>
-        <div class="card-tagline">Shaman. Totem presets, a secure cast bar, Call of the Elements sync and imbues.</div>
-        <div class="card-slash">/wtt</div>
-        <div class="card-actions"><a href="https://github.com/Wicks-mods/WicksTotemsAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Demons and Things</div>
-        <div class="card-tagline">Warlock. Soul bar, pet bar and shard counter, rebuilt for the new rules.</div>
-        <div class="card-slash">/wdt</div>
-        <div class="card-actions"><a href="https://github.com/Wicks-mods/WicksDemonsAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Forms and Things</div>
-        <div class="card-tagline">Druid. One smart keybind that resolves to the right form for where you are standing.</div>
-        <div class="card-slash">/wft</div>
-        <div class="card-actions"><a href="https://github.com/Wicks-mods/WicksFormsAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-thumb">
-        <img src="images/beasts/thumb.png" alt="Wick's Beasts and Things">
-      </div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Beasts and Things</div>
-        <div class="card-tagline">Hunter. Pet happiness and loyalty, one-key feeding from your own bags, an ammo watch reading shots against what your quiver holds, and an atlas of which beast family brings which ability, learned as you tame.</div>
-        <div class="card-slash">/wbt</div>
-        <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-beasts-and-things" class="card-btn cf">CurseForge</a>
-          <a href="https://github.com/Wicks-mods/WicksBeastsAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Poisons and Things</div>
-        <div class="card-tagline">Rogue. What coats each blade and how long it has left, a coating key per hand, and combo points over the target&rsquo;s nameplate.</div>
-        <div class="card-slash">/wpt</div>
-        <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-poisons-and-things" class="card-btn cf">CurseForge</a>
-          <a href="https://github.com/Wicks-mods/WicksPoisonsAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Conjures and Things</div>
-        <div class="card-tagline">Mage. Rations and reagents counted at a glance, with conjure keys bound to the best rank you know, food and water both.</div>
-        <div class="card-slash">/wcj</div>
-        <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-conjures-and-things" class="card-btn cf">CurseForge</a>
-          <a href="https://github.com/Wicks-mods/WicksConjuresAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Stances and Things</div>
-        <div class="card-tagline">Warrior. Three stances and a smart key in one row: bind an ability and the key puts you in the stance it needs, then uses it. Plus a shout and stance checklist before a pull.</div>
-        <div class="card-slash">/wst</div>
-        <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-stances-and-things" class="card-btn cf">CurseForge</a>
-          <a href="https://github.com/Wicks-mods/WicksStancesAndThings" class="card-btn">GitHub</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
-      <div class="card-thumb">
-        <img src="images/seals/thumb.png" alt="Wick's Seals and Things">
-      </div>
-      <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Seals and Things</div>
-        <div class="card-tagline">Paladin. One seal key that cycles the Crusader and your fighting seal, a blessing key that goes to a friend first, and two-hander or sword-and-board on a key.</div>
-        <div class="card-slash">/wsl</div>
-        <div class="card-actions">
-          <a href="https://www.curseforge.com/wow/addons/wicks-seals-and-things" class="card-btn cf">CurseForge</a>
-          <a href="https://github.com/Wicks-mods/WicksSealsAndThings" class="card-btn">GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="br tl"><div class="h"></div><div class="v"></div></div>
-      <div class="br tr"><div class="h"></div><div class="v"></div></div>
-      <div class="br bl"><div class="h"></div><div class="v"></div></div>
-      <div class="br br"><div class="h"></div><div class="v"></div></div>
       <div class="card-thumb">
         <img src="images/survivors/thumb.png" alt="Wick's Survivors">
       </div>
@@ -685,12 +591,70 @@
     </div>
 
   </div>
+
+  <div class="section-label">Class kits</div>
+  <p class="section-intro">One kit per class: the keys, counters and checklists that class juggles, in the same chrome as everything else.</p>
+
+  <div class="kits">
+    <div class="kit" style="--cc:#AAD372">
+      <div class="kit-class">Hunter</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Beasts and Things</div>
+      <div class="kit-line">Pet happiness and loyalty, one-key feeding from your own bags, an ammo watch and an atlas of beast families.</div>
+      <div class="kit-foot"><a href="https://www.curseforge.com/wow/addons/wicks-beasts-and-things" class="cf">CurseForge</a><a href="https://github.com/Wicks-mods/WicksBeastsAndThings">GitHub</a><span class="kit-slash">/wbt</span></div>
+    </div>
+    <div class="kit" style="--cc:#F48CBA">
+      <div class="kit-class">Paladin</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Seals and Things</div>
+      <div class="kit-line">One seal key that cycles the Crusader and your fighting seal, a blessing key and weapon swap keys.</div>
+      <div class="kit-foot"><a href="https://www.curseforge.com/wow/addons/wicks-seals-and-things" class="cf">CurseForge</a><a href="https://github.com/Wicks-mods/WicksSealsAndThings">GitHub</a><span class="kit-slash">/wsl</span></div>
+    </div>
+    <div class="kit" style="--cc:#FFF468">
+      <div class="kit-class">Rogue</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Poisons and Things</div>
+      <div class="kit-line">What coats each blade and for how long, a coating key per hand and combo points over the target.</div>
+      <div class="kit-foot"><a href="https://www.curseforge.com/wow/addons/wicks-poisons-and-things" class="cf">CurseForge</a><a href="https://github.com/Wicks-mods/WicksPoisonsAndThings">GitHub</a><span class="kit-slash">/wpt</span></div>
+    </div>
+    <div class="kit" style="--cc:#C69B3A">
+      <div class="kit-class">Warrior</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Stances and Things</div>
+      <div class="kit-line">Bind an ability and one key puts you in the stance it needs, then uses it. A shout and stance checklist before a pull.</div>
+      <div class="kit-foot"><a href="https://www.curseforge.com/wow/addons/wicks-stances-and-things" class="cf">CurseForge</a><a href="https://github.com/Wicks-mods/WicksStancesAndThings">GitHub</a><span class="kit-slash">/wst</span></div>
+    </div>
+    <div class="kit" style="--cc:#8788EE">
+      <div class="kit-class">Warlock</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Demons and Things</div>
+      <div class="kit-line">Soul bar, pet bar and shard counter, rebuilt for the new rules.</div>
+      <div class="kit-foot"><span class="kit-soon">Coming soon</span><a href="https://github.com/Wicks-mods/WicksDemonsAndThings">GitHub</a><span class="kit-slash">/wdt</span></div>
+    </div>
+    <div class="kit" style="--cc:#3FC7EB">
+      <div class="kit-class">Mage</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Conjures and Things</div>
+      <div class="kit-line">Rations and reagents at a glance, with conjure keys bound to the best rank you know.</div>
+      <div class="kit-foot"><span class="kit-soon">Coming soon</span><a href="https://github.com/Wicks-mods/WicksConjuresAndThings">GitHub</a><span class="kit-slash">/wcj</span></div>
+    </div>
+    <div class="kit" style="--cc:#0070DD">
+      <div class="kit-class">Shaman</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Totems and Things</div>
+      <div class="kit-line">Totem presets, a secure cast bar, Call of the Elements sync and imbues.</div>
+      <div class="kit-foot"><span class="kit-soon">Coming soon</span><a href="https://github.com/Wicks-mods/WicksTotemsAndThings">GitHub</a><span class="kit-slash">/wtt</span></div>
+    </div>
+    <div class="kit" style="--cc:#FF7C0A">
+      <div class="kit-class">Druid</div>
+      <div class="kit-name"><span class="apo">Wick's</span> Forms and Things</div>
+      <div class="kit-line">One smart keybind that resolves to the right form for where you are standing.</div>
+      <div class="kit-foot"><span class="kit-soon">Coming soon</span><a href="https://github.com/Wicks-mods/WicksFormsAndThings">GitHub</a><span class="kit-slash">/wft</span></div>
+    </div>
+  </div>
 </section>
 
 <section class="cta">
   <h2><span class="apo">Wick's</span> first; nothing second.</h2>
-  <p>Every product stands on WickCore: one options panel, one set of profiles, one palette you can retheme per class. Built solo, by Wick.</p>
-  <a href="/tbc/" class="btn">Playing TBC Classic instead? &rarr;</a>
+  <p>Every addon stands on WickCore: one options panel, one set of profiles, one palette you can retheme per class. Built solo, by Wick.</p>
+  <div class="hero-actions" style="justify-content:center">
+    <a href="https://www.curseforge.com/wow/addons/wickcore" class="btn primary">WickCore on CurseForge &rarr;</a>
+    <a href="https://discord.gg/GWGTMhYBZY" class="btn">Join the Discord &rarr;</a>
+  </div>
+  <p class="cta-alt"><a href="/tbc/">Playing TBC Classic instead? The TBC suite is here &rarr;</a></p>
 </section>
 
 <footer>
