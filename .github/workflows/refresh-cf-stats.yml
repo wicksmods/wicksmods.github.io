@@ -144,7 +144,7 @@ jobs:
         run: |
           git config user.name "Wick"
           git config user.email "wicksmods@gmail.com"
-          git add data/downloads.json data/addons-status.json tbc/index.html
+          git add data/downloads.json data/addons-status.json index.html tbc/index.html
           if git diff --staged --quiet; then
             echo "No change — nothing to commit."
             echo "changed=false" >> "$GITHUB_OUTPUT"
