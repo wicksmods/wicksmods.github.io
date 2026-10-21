@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wick's Mods &middot; Precision Addons for World of Warcraft: Forever</title>
+<title>Addons for World of Warcraft: Forever, from Wick's Mods</title>
 <meta name="description" content="A suite of precision addons for World of Warcraft: Forever. One voice, one chrome. Bags, class kits, comforts, all on WickCore.">
 <link rel="canonical" href="https://wicksmods.com/">
 <!-- Search Console ownership for the Wickidspliff Google account: wicksmods.com is the OAuth domain for its Wickidspliff Uploader app. Removing this tag undoes the verification. -->
@@ -13,7 +13,7 @@
 <link rel="apple-touch-icon" sizes="256x256" href="images/favicon.png">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Wick's Mods &middot; Precision Addons for World of Warcraft: Forever">
+<meta property="og:title" content="Addons for World of Warcraft: Forever, from Wick's Mods">
 <meta property="og:description" content="A suite of precision addons. One voice. One chrome. Now building for Forever.">
 <meta property="og:image" content="https://wicksmods.com/images/suite/site-card-2x.jpg">
 <meta property="og:image:width" content="2400">
@@ -25,12 +25,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@wicksmods">
 <meta name="twitter:creator" content="@wicksmods">
-<meta name="twitter:title" content="Wick's Mods &middot; Precision Addons for World of Warcraft: Forever">
+<meta name="twitter:title" content="Addons for World of Warcraft: Forever, from Wick's Mods">
 <meta name="twitter:description" content="A suite of precision addons. One voice. One chrome.">
 <meta name="twitter:image" content="https://wicksmods.com/images/suite/site-card-2x.jpg">
 <meta name="twitter:image:alt" content="Wick's Suite for World of Warcraft: Forever. Rebuild your whole UI: in-game captures of bags, gear, trade, class kits and the UI looks.">
 
 <meta name="theme-color" content="#0D0A14">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com/","logo":"https://wicksmods.com/images/brand/logo-512.png","sameAs":["https://github.com/Wicks-mods","https://www.curseforge.com/members/wicksmods/projects","https://discord.gg/GWGTMhYBZY","https://x.com/wicksmods","https://www.facebook.com/profile.php?id=61588703194645"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Wick's Mods","url":"https://wicksmods.com/"}</script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -420,6 +422,9 @@
     .hero-eyebrow::before { display: none; }
     .hero-actions .btn { flex: 1 1 100%; justify-content: center; }
   }
+  /* Card names link to the addon's own page. */
+  .card-name a { color: inherit; }
+  .card-name a:hover { color: var(--fel); }
 </style>
 </head>
 <body>
@@ -495,7 +500,7 @@
         <img src="images/bags/thumb.png" alt="Wick's Bags">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Bags</div>
+        <div class="card-name"><a href="/addons/wicks-bags/"><span class="apo">Wick's</span> Bags</a></div>
         <div class="card-tagline">Bags and bank in one window, sorted into categories you control. Quiver and reagents collapse to a single counted tile.</div>
         <div class="card-slash">/wbags</div>
         <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-bags" class="card-btn cf">CurseForge</a>
@@ -512,7 +517,7 @@
         <img src="images/comforts/thumb.png" alt="Wick's Comforts">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Comforts</div>
+        <div class="card-name"><a href="/addons/wicks-comforts/"><span class="apo">Wick's</span> Comforts</a></div>
         <div class="card-tagline">Square minimap in Wick chrome, richer tooltips, auto loot, auto repair and junk selling. Every one of them off until you turn it on, bar the fix for an error the game itself throws.</div>
         <div class="card-slash">/wcomfort</div>
         <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-comforts" class="card-btn cf">CurseForge</a>
@@ -529,7 +534,7 @@
         <img src="images/gear/thumb.png" alt="Wick's Gear">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Gear</div>
+        <div class="card-name"><a href="/addons/wicks-gear/"><span class="apo">Wick's</span> Gear</a></div>
         <div class="card-tagline">What to chase while leveling, a browser for what drops where, and a paperdoll to try pieces on: right-click anything to see what it would do to your stats, green up and red down. Ships item ids and nothing else, so every number comes from your own client.</div>
         <div class="card-slash">/wgear</div>
         <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-gear" class="card-btn cf">CurseForge</a>
@@ -546,7 +551,7 @@
         <img src="images/trade/thumb.png" alt="Wick's Trade Hall">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Trade Hall</div>
+        <div class="card-name"><a href="/addons/trade-hall/"><span class="apo">Wick's</span> Trade Hall</a></div>
         <div class="card-tagline">What a run earned and what trade chat is offering, in one window. The session side values loot at vendor price and marks what it cannot price rather than guessing; the board keeps one line per person per subject, sorted into selling, buying, enchanting, crafting and travel. It reads the channel and never posts.</div>
         <div class="card-slash">/wth</div>
         <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/trade-hall" class="card-btn cf">CurseForge</a>
@@ -564,7 +569,7 @@
         <img src="images/reminders/thumb.png" alt="Wick's Reminders">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Reminders</div>
+        <div class="card-name"><a href="/addons/wicks-reminders/"><span class="apo">Wick's</span> Reminders</a></div>
         <div class="card-tagline">Timers, alarms and event reminders that keep counting between sessions, with Snooze and Done on every alert. TBC Classic Anniversary and Forever.</div>
         <div class="card-slash">/remind</div>
         <div class="card-actions">
@@ -583,7 +588,7 @@
         <img src="images/survivors/thumb.png" alt="Wick's Survivors">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Survivors</div>
+        <div class="card-name"><a href="/addons/wicks-survivors/"><span class="apo">Wick's</span> Survivors</a></div>
         <div class="card-tagline">Wave survival minigame. Biomes, bosses, weapons and passives, inside your UI. Runs on Forever and on TBC.</div>
         <div class="card-slash">/survivors</div>
         <div class="card-actions"><a href="https://www.curseforge.com/wow/addons/wicks-survivors" class="card-btn cf">CurseForge</a><a href="https://github.com/Wicks-mods/WicksSurvivors" class="card-btn">GitHub</a></div>
@@ -661,6 +666,7 @@
   <div class="row">Wick &middot; World of Warcraft: Forever &middot; MIT licensed code &middot; Brand trademarked</div>
   <div class="row">
     <a href="/tbc/">TBC Classic suite</a> &middot;
+    <a href="/addons/">All addons</a> &middot;
     <a href="https://discord.gg/GWGTMhYBZY">Discord</a> &middot;
     <a href="https://www.facebook.com/profile.php?id=61588703194645">Facebook</a> &middot;
     <a href="https://x.com/wicksmods">X</a> &middot;

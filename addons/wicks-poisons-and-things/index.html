@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wick's Poisons and Things: the rogue kit, for WoW Forever</title>
+<meta name="description" content="The rogue kit: blade watch, one-key coating, combo points and weapon swaps. What coats each blade, and how long is left. One key per hand to recoat...">
+<link rel="canonical" href="https://wicksmods.com/addons/wicks-poisons-and-things/">
+<link rel="icon" type="image/png" sizes="256x256" href="/images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wick's Poisons and Things: the rogue kit, for WoW Forever">
+<meta property="og:description" content="The rogue kit: blade watch, one-key coating, combo points and weapon swaps. What coats each blade, and how long is left. One key per hand to recoat...">
+<meta property="og:image" content="https://wicksmods.com/images/poisons/thumb-2x.png">
+<meta property="og:url" content="https://wicksmods.com/addons/wicks-poisons-and-things/">
+<meta property="og:site_name" content="Wick's Mods">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wicksmods">
+<meta name="twitter:title" content="Wick's Poisons and Things: the rogue kit, for WoW Forever">
+<meta name="twitter:description" content="The rogue kit: blade watch, one-key coating, combo points and weapon swaps. What coats each blade, and how long is left. One key per hand to recoat...">
+<meta name="twitter:image" content="https://wicksmods.com/images/poisons/thumb-2x.png">
+<meta name="theme-color" content="#0D0A14">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --fel:#4FC778; --void:#0D0A14; --shadow:#171124; --border:#383058; --text:#D4C8A1; --text-dim:#8F8870; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:var(--void); color:var(--text); }
+  body { font-family:'Space Grotesk', sans-serif; font-size:16px; line-height:1.6; min-height:100vh; }
+  a { color:var(--fel); text-decoration:none; } a:hover { color:var(--text); }
+  code { font-family:'Space Mono', monospace; font-size:0.9em; color:var(--text); background:var(--shadow); padding:0 4px; }
+  .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+  .top { border-bottom:1px solid var(--border); background:var(--shadow); }
+  .top .container { display:flex; align-items:center; justify-content:space-between; height:56px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:'Cinzel', serif; font-weight:700; letter-spacing:0.08em; color:var(--text); font-size:18px; }
+  .brand .apo { color:var(--fel); }
+  .nav a { margin-left:18px; font-size:14px; color:var(--text-dim); } .nav a:hover { color:var(--fel); }
+  .hero { padding:56px 0 36px; border-bottom:1px solid var(--border); }
+  .eyebrow { font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:var(--fel); margin-bottom:14px; }
+  h1 { font-family:'Cinzel', serif; font-weight:700; font-size:40px; line-height:1.15; color:var(--text); margin-bottom:14px; }
+  h1 .apo { color:var(--fel); }
+  .lede { font-size:19px; color:var(--text); max-width:760px; margin-bottom:22px; }
+  .meta { font-family:'Space Mono', monospace; font-size:13px; color:var(--text-dim); margin-bottom:22px; }
+  .meta span + span::before { content:'\00a0\00b7\00a0'; color:var(--border); }
+  .actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:10px 18px; border:1px solid var(--border); color:var(--text); font-weight:500; font-size:15px; }
+  .btn.primary { border-color:var(--fel); color:var(--fel); }
+  .btn:hover { border-color:var(--fel); color:var(--fel); }
+  .panel { position:relative; border:1px solid var(--border); background:var(--shadow); padding:22px; }
+  .panel::before, .panel::after { content:''; position:absolute; width:10px; height:10px; border-color:var(--fel); border-style:solid; }
+  .panel::before { top:-1px; left:-1px; border-width:2px 0 0 2px; }
+  .panel::after { bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; margin:36px 0; }
+  .thumb img { display:block; width:100%; height:auto; border:1px solid var(--border); }
+  h2 { font-family:'Cinzel', serif; font-weight:700; font-size:22px; color:var(--text); margin:36px 0 14px; }
+  h3 { font-size:17px; font-weight:600; color:var(--text); margin:22px 0 6px; }
+  h4 { font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--fel); margin:16px 0 6px; }
+  ul { padding-left:20px; } li { margin:4px 0; } p { margin:8px 0; }
+  .features li { margin:6px 0; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:16px; }
+  .shots img { display:block; width:100%; height:auto; border:1px solid var(--border); }
+  .log .ver { font-family:'Space Mono', monospace; color:var(--text-dim); font-size:13px; }
+  .suite { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:10px 24px; }
+  .suite a { font-size:15px; }
+  footer { border-top:1px solid var(--border); margin-top:56px; padding:28px 0 40px; color:var(--text-dim); font-size:14px; }
+  footer a { color:var(--text-dim); } footer a:hover { color:var(--fel); }
+  @media (max-width:760px) { .grid { grid-template-columns:1fr; } h1 { font-size:32px; } .top .container { height:auto; padding:10px 24px; } }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Poisons and Things","url":"https://wicksmods.com/addons/wicks-poisons-and-things/","description":"The rogue kit: blade watch, one-key coating, combo points and weapon swaps.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.9.1","dateModified":"2026-09-26","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-poisons-and-things","installUrl":"https://www.curseforge.com/wow/addons/wicks-poisons-and-things","image":"https://wicksmods.com/images/poisons/thumb-2x.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-poisons-and-things","https://github.com/Wicks-mods/WicksPoisonsAndThings"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Wick's Mods","item":"https://wicksmods.com/"},{"@type":"ListItem","position":2,"name":"All addons","item":"https://wicksmods.com/addons/"},{"@type":"ListItem","position":3,"name":"Wick's Poisons and Things","item":"https://wicksmods.com/addons/wicks-poisons-and-things/"}]}</script>
+</head>
+<body>
+<div class="top"><div class="container">
+  <a class="brand" href="/">WICK<span class="apo">'</span>S MODS</a>
+  <nav class="nav"><a href="/">Forever</a><a href="/tbc/">TBC Classic</a><a href="/ui/">Wick's UI</a><a href="/addons/">All addons</a><a href="https://discord.gg/GWGTMhYBZY">Discord</a></nav>
+</div></div>
+<section class="hero"><div class="container">
+  <div class="eyebrow">World of Warcraft: Forever</div>
+  <h1>Wick<span class="apo">'</span>s Poisons and Things</h1>
+  <p class="lede">The rogue kit: blade watch, one-key coating, combo points and weapon swaps.</p>
+  <div class="meta"><span>version 0.9.1</span><span>/wpt</span><span>free, open source</span></div>
+  <div class="actions">
+    <a href="https://www.curseforge.com/wow/addons/wicks-poisons-and-things" class="btn primary">Get it on CurseForge &rarr;</a>
+    <a href="https://github.com/Wicks-mods/WicksPoisonsAndThings" class="btn">Source on GitHub</a>
+    <a href="https://discord.gg/GWGTMhYBZY" class="btn">Discord</a>
+  </div>
+</div></section>
+<main class="container">
+  <div class="grid">
+    <div class="panel">
+      <h2 style="margin-top:0">What it does</h2>
+      <ul class="features"><li>What coats each blade, and how long is left</li><li>One key per hand to recoat, pinned or best carried</li><li>Combo points over the target, energy under them</li><li>Weapon swap keys for a dagger opener</li><li>Talents, checklist and racials</li></ul>
+      <p style="margin-top:14px;color:var(--text-dim)">Needs <a href="/addons/wickcore/">WickCore</a>, the shared base every Wick addon draws from. CurseForge installs it alongside.</p>
+    </div>
+    <div class="thumb"><img src="/images/poisons/thumb-2x.png" alt="Wick's Poisons and Things card" width="920" height="520"></div>
+  </div>
+  
+  <h2>Latest changes</h2><div class="log"><h3>0.9.1 <span class="ver">2026-09-26</span></h3>
+<p>First release on CurseForge. Everything below has been in the beta zip; this is it as a package.</p>
+<ul><li>Combo points over the target's nameplate. Off the game's own class resource, which only ever sits under your own plate. Toggle in options.</li><li>An energy bar under them. The pips say how close the finisher is; this says whether you can pay for it, without looking away to the player frame. Nothing compares the reading, so it draws the same whether the client hands energy over plainly or withholds it. Toggle in options.</li><li>Two weapon swap keys, for a slow main hand and a dagger off hand. One puts the dagger in your main hand and stealths, the other puts the slow weapon back and strikes. They read whatever you are wearing, so a new weapon needs nothing done to it, and they address the blades by item id rather than by name so two swords called the same thing cannot pick the wrong one. Bind them under Key Bindings. The swap costs you a swing and your coatings travel with the blades, both of which are worth knowing before you use them. /wpt swap says what it worked out; /wpt swap strike &lt;spell&gt; rides the swap back on something other than Sinister Strike.</li><li>The strip carries the swap as two icons on its right end, each the weapon that key puts in your main hand, with a fel edge on the one you are already holding there. Clicking one does what the key does. A pair it cannot read greys out rather than disappearing, so the strip never changes shape on you mid-pull.</li><li>The keys read your stance before moving anything. The stealth key is a toggle for the weapons as well as the spell: pressed while stealthed it drops stealth and puts the slow weapon back, where before it put the dagger up again on the way out. It holds off entirely in combat, where Stealth will not cast anyway. And the strike key leaves your hands alone while you are stealthed, so a press from stealth can no longer strip the dagger you were opening with.</li><li>The stealth key stays put while Stealth is on cooldown. A macro cannot ask about one, so while Stealth is down the lines that would put the dagger up are left out of the macro entirely, rather than swapping your weapons for a cast that goes nowhere. Getting back out of stealth still works, since a cooldown should not be able to strand you holding the wrong blade.</li><li>The mark on the strip keeps up with a swap made in combat. Reading which hand holds what and redrawing the strip sat behind the guard that stops a macro being rewritten mid-fight, which applies to neither, so the weapons moved on the key and the mark did not follow until the fight ended.</li><li>Your coatings are read whatever the client will answer to. They could show as bare on both blades with poison on both: the reading went through one call and nothing stood behind it, so on a client that does not have that one there was no answer at all. It tries every shape the call comes in now, and /wpt status names which one answered along with which your client has. On this client all three are present and none of them answers, so the last fallback reads the line the game writes on the weapon itself. That one also brings back the poison's name, so the strip says which coating is on the blade rather than only how long it has left.</li><li>Pin a coating by clicking it. The panel lists what you carry as icons now: left-click pins one to your main hand, right-click to the off hand, click again to let go, and the hand it is pinned to is marked on the icon. Switching coating used to mean shift-clicking the item into chat and typing a command at it.</li><li>The warning threshold is a stepper on the options page rather than /wpt warn &lt;minutes&gt;.</li><li>The coating's name is on the hover rather than the strip, where it truncated to three letters on both blades. The swap buttons keep their block on the right: riding the hands put a secure button on top of a secure button and the press stopped swapping anything.</li><li>The swap keys work at login without equipping something by hand first. They were written once at load, before the client could say what was in your hands, and nothing re-ran until your gear changed. They now fill in as the gear arrives and as the client gets round to describing it, and look again a few times while there is still nothing to look at.</li><li>Best carried now means best for that hand. The list was ranked on item level alone, and Crippling outranks Instant at several points on the way up, so a poison that slows kept taking a slot meant for damage. Instant on the main hand and Deadly on the off hand, with item level only settling it between two of the same kind. Pinning is unchanged and still wins outright.</li></ul>
+<h3>0.9.0 <span class="ver"></span></h3>
+<p>One version across the suite for the Forever beta. Every addon carried a number of its own that said nothing about how finished it was, so they are aligned here and the suite goes to 1.0.0 together at launch.</p>
+<h3>0.1.0 <span class="ver">2026-09-18</span></h3>
+<h4>First cut of the rogue kit on WickCore</h4>
+<ul><li>Requires WickCore. Interface 16001.</li><li>Blade watch: what coats each hand, how long it has left and how many charges, read through the client's temporary enchantment info.</li><li>Coating keys, one per hand. The macro is rewritten out of combat to use the chosen coating and then that weapon slot. Pin one per hand with /wpt pin, or let it take the best you carry.</li><li>Compact strip: both blades on one row, click a blade to recoat, hover for detail, right-click for the full panel.</li><li>Talents: export, import, save, apply, through Blizzard's own parser.</li><li>Pre-pull checklist: main hand coated, off hand coated, coatings carried, Stealth.</li><li>Racials row. Kit panel at /wpt kit. Minimap launcher and a page under Options, Wick's Mods.</li></ul></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksPoisonsAndThings/blob/main/CHANGELOG.md">the repository</a>.</p>
+  <h2>More from the suite</h2>
+  <div class="suite"><a href="/addons/wicks-bags/">Wick's Bags</a><a href="/addons/wicks-beasts-and-things/">Wick's Beasts and Things</a><a href="/addons/wicks-cd-tracker/">Wick's CD Tracker</a><a href="/addons/wicks-combat-log/">Wick's Combat Log</a><a href="/addons/wicks-comforts/">Wick's Comforts</a><a href="/addons/wicks-demons-and-things/">Wick's Demons and Things</a><a href="/addons/wicks-gear/">Wick's Gear</a><a href="/addons/wicks-ledger/">Wick's Ledger</a><a href="/addons/wicks-macro-builder/">Wick's Macro Builder</a><a href="/addons/wicks-quest-key/">Wick's Quest Key</a><a href="/addons/wicks-reminders/">Wick's Reminders</a><a href="/addons/wicks-seals-and-things/">Wick's Seals and Things</a><a href="/addons/wicks-stances-and-things/">Wick's Stances and Things</a><a href="/addons/wicks-stats/">Wick's Stats</a><a href="/addons/wicks-survivors/">Wick's Survivors</a><a href="/addons/wicks-tbc-bis-tracker/">Wick's TBC BIS Tracker</a><a href="/addons/wicks-totems-and-things/">Wick's Totems and Things</a><a href="/addons/trade-hall/">Wick's Trade Hall</a><a href="/addons/wicks-travel-form/">Wick's Travel Form</a><a href="/ui/">Wick's UI</a><a href="/addons/wicks-wardrobe/">Wick's Wardrobe</a></div>
+</main>
+<footer><div class="container">
+  <a href="https://discord.gg/GWGTMhYBZY">Discord</a> &middot;
+  <a href="https://www.facebook.com/profile.php?id=61588703194645">Facebook</a> &middot;
+  <a href="https://x.com/wicksmods">X</a> &middot;
+  <a href="https://github.com/Wicks-mods">Wick's Mods on GitHub</a> &middot;
+  <a href="https://www.curseforge.com/members/wicksmods/projects">Wick on CurseForge</a> &middot;
+  <a href="/privacy/">Privacy</a>
+</div></footer>
+</body>
+</html>

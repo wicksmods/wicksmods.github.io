@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wick's Mods &middot; Precision Addons for TBC Classic</title>
+<title>Addons for TBC Classic Anniversary, from Wick's Mods</title>
 <meta name="description" content="A suite of precision addons for TBC Classic. One voice, one chrome. Wick's TBC BIS Tracker, CD Tracker, Trade Hall, Macro Builder, Combat Log.">
 <link rel="canonical" href="https://wicksmods.com/tbc/">
 
@@ -14,7 +14,7 @@
 <!-- Open Graph — canonical domain is wicksmods.com (Cloudflare Worker);
      wicksmods.github.io remains as a mirror -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Wick's Mods &middot; Precision Addons for TBC Classic">
+<meta property="og:title" content="Addons for TBC Classic Anniversary, from Wick's Mods">
 <meta property="og:description" content="A suite of precision addons. One voice. One chrome. Built to be read at-a-glance during combat.">
 <meta property="og:image" content="https://wicksmods.com/images/suite/site-card-tbc-2x.jpg">
 <meta property="og:image:width" content="2400">
@@ -27,7 +27,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@wicksmods">
 <meta name="twitter:creator" content="@wicksmods">
-<meta name="twitter:title" content="Wick's Mods &middot; Precision Addons for TBC Classic">
+<meta name="twitter:title" content="Addons for TBC Classic Anniversary, from Wick's Mods">
 <meta name="twitter:description" content="A suite of precision addons. One voice. One chrome.">
 <meta name="twitter:image" content="https://wicksmods.com/images/suite/site-card-tbc-2x.jpg">
 <meta name="twitter:image:alt" content="Wick's Suite for TBC Classic Anniversary: in-game captures of the BIS Tracker, CD Tracker, Trade Hall, Reminders, Survivors and more.">
@@ -361,6 +361,10 @@
     .wordmark { font-size: 60px; }
     .wordmark-sub { font-size: 18px; letter-spacing: 0.3em; }
   }
+  h1.hero-tagline { font-weight: inherit; font-size: inherit; margin-bottom: 0; }
+  /* Card names link to the addon's own page. */
+  .card-name a { color: inherit; }
+  .card-name a:hover { color: var(--fel); }
 </style>
 </head>
 <body>
@@ -387,8 +391,9 @@
   <div class="hero-eyebrow">World of Warcraft · TBC Classic</div>
   <div class="wordmark">W<svg width="40" height="91"><use href="#flame-i"/></svg>ck<span class="apo">'</span>s</div>
   <div class="wordmark-sub">MODS</div>
+  <h1 class="hero-tagline"><em>A suite of precision addons for TBC Classic.</em></h1>
   <div class="hero-tagline">
-    <em>A suite of precision addons.</em> One voice. One chrome. Built to be read at-a-glance during combat — not between pulls.
+    One voice. One chrome. Built to be read at a glance during combat, not between pulls.
   </div>
   <div class="hero-actions">
     <a href="#suite" class="btn primary">Browse the Suite ↓</a>
@@ -423,7 +428,7 @@
         <img src="../images/bis/thumb.png" alt="Wick's TBC BIS Tracker">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> TBC BIS Tracker</div>
+        <div class="card-name"><a href="/addons/wicks-tbc-bis-tracker/"><span class="apo">Wick's</span> TBC BIS Tracker</a></div>
         <div class="card-tagline">Best-in-slot gear tracking for every class, every spec, every phase of TBC Classic.</div>
         <div class="card-slash">/wtbt</div>
         <div class="card-actions">
@@ -443,7 +448,7 @@
         <img src="../images/cd/thumb.png" alt="Wick's CD Tracker">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> CD Tracker</div>
+        <div class="card-name"><a href="/addons/wicks-cd-tracker/"><span class="apo">Wick's</span> CD Tracker</a></div>
         <div class="card-tagline">Live party / raid cooldown tracker. Kicks, saves, offensives, utility — one tight panel.</div>
         <div class="card-slash">/wcdt</div>
         <div class="card-actions">
@@ -463,7 +468,7 @@
         <img src="../images/trade/thumb.png" alt="Wick's Trade Hall">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Trade Hall</div>
+        <div class="card-name"><a href="/addons/trade-hall/"><span class="apo">Wick's</span> Trade Hall</a></div>
         <div class="card-tagline">Trade channel as a bulletin board. Seven categories, aged-out listings, no wall-of-spam.</div>
         <div class="card-slash">/wth</div>
         <div class="card-actions">
@@ -483,7 +488,7 @@
         <img src="../images/macro/thumb.png" alt="Wick's Macro Builder">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Macro Builder</div>
+        <div class="card-name"><a href="/addons/wicks-macro-builder/"><span class="apo">Wick's</span> Macro Builder</a></div>
         <div class="card-tagline">Click-to-insert chips, drag macros to action bars, curated presets for all 9 classes.</div>
         <div class="card-slash">/wsmb</div>
         <div class="card-actions">
@@ -503,7 +508,7 @@
         <img src="../images/combat/thumb.png" alt="Wick's Combat Log">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Combat Log</div>
+        <div class="card-name"><a href="/addons/wicks-combat-log/"><span class="apo">Wick's</span> Combat Log</a></div>
         <div class="card-tagline">Raw COMBAT_LOG_EVENT_UNFILTERED viewer. Every subevent, every arg, with filters and side-panel inspection.</div>
         <div class="card-slash">/wcl</div>
         <div class="card-actions">
@@ -523,7 +528,7 @@
         <img src="../images/stats/thumb.png" alt="Wick's Stats">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Stats</div>
+        <div class="card-name"><a href="/addons/wicks-stats/"><span class="apo">Wick's</span> Stats</a></div>
         <div class="card-tagline">Detailed character stat panel docked next to the character frame. Shows everything Blizzard hides.</div>
         <div class="card-slash">/wstats</div>
         <div class="card-actions">
@@ -543,7 +548,7 @@
         <img src="../images/questkey/thumb.png" alt="Wick's Quest Key">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Quest Key</div>
+        <div class="card-name"><a href="/addons/wicks-quest-key/"><span class="apo">Wick's</span> Quest Key</a></div>
         <div class="card-tagline">Retail-style ExtraActionButton for TBC Classic. One bind to use the active quest item, auto-detected from your quest log.</div>
         <div class="card-slash">/wqk</div>
         <div class="card-actions">
@@ -563,7 +568,7 @@
         <img src="../images/totems/thumb.png" alt="Wick's Totems and Things">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Totems and Things</div>
+        <div class="card-name"><a href="/addons/wicks-totems-and-things/"><span class="apo">Wick's</span> Totems and Things</a></div>
         <div class="card-tagline">Shaman totem twist + proc tracker. Drop sets on one keybind, see who's in range, and never miss a Windfury or Stormstrike refresh.</div>
         <div class="card-slash">/wtt</div>
         <div class="card-actions">
@@ -583,7 +588,7 @@
         <img src="../images/demons/thumb.png" alt="Wick's Demons and Things">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Demons and Things</div>
+        <div class="card-name"><a href="/addons/wicks-demons-and-things/"><span class="apo">Wick's</span> Demons and Things</a></div>
         <div class="card-tagline">Warlock bars: stones and rituals, demons, cooldowns and procs, and your shards. Healthstone and Soulstone in one click, a summon button for every demon you know.</div>
         <div class="card-slash">/wdt</div>
         <div class="card-actions">
@@ -603,7 +608,7 @@
         <img src="../images/bags/thumb.png" alt="Wick's Bags">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Bags</div>
+        <div class="card-name"><a href="/addons/wicks-bags/"><span class="apo">Wick's</span> Bags</a></div>
         <div class="card-tagline">Categorized bag and bank panels for TBC Classic. Auto-categorize, masonry layout, ItemRack integration, secure right-click for combat consumables.</div>
         <div class="card-slash">/wbags</div>
         <div class="card-actions">
@@ -623,7 +628,7 @@
         <img src="../images/travel/thumb.png" alt="Wick's Travel Form">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Travel Form</div>
+        <div class="card-name"><a href="/addons/wicks-travel-form/"><span class="apo">Wick's</span> Travel Form</a></div>
         <div class="card-tagline">One druid keybind. Picks Flight, Travel, Aquatic, or Cat by where you are right now. Works around TBC's broken IsFlyableArea API.</div>
         <div class="card-slash">/wstf</div>
         <div class="card-actions">
@@ -643,7 +648,7 @@
         <img src="../images/ledger/thumb.png" alt="Wick's Ledger">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Ledger</div>
+        <div class="card-name"><a href="/addons/wicks-ledger/"><span class="apo">Wick's</span> Ledger</a></div>
         <div class="card-tagline">Session earnings tracker for TBC Classic. Every loot drop valued against TSM, Auctionator, or Auctioneer -- raw gold, items, XP, and rep in one slim panel.</div>
         <div class="card-slash">/wledger</div>
         <div class="card-actions">
@@ -664,7 +669,7 @@
         <img src="../images/reminders/thumb.png" alt="Wick's Reminders">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Reminders</div>
+        <div class="card-name"><a href="/addons/wicks-reminders/"><span class="apo">Wick's</span> Reminders</a></div>
         <div class="card-tagline">Timers, alarms and event reminders that keep counting between sessions, with Snooze and Done on every alert. TBC Classic Anniversary and Forever.</div>
         <div class="card-slash">/remind</div>
         <div class="card-actions">
@@ -685,7 +690,7 @@
         <img src="../images/survivors/thumb.png" alt="Wick's Survivors">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Survivors</div>
+        <div class="card-name"><a href="/addons/wicks-survivors/"><span class="apo">Wick's</span> Survivors</a></div>
         <div class="card-tagline">Vampire Survivors-style wave survival minigame for TBC Classic Anniversary. Survive endless undead waves, level up weapons and passives, fight iconic bosses.</div>
         <div class="card-slash">/survivors</div>
         <div class="card-actions">
@@ -705,7 +710,7 @@
         <img src="../images/wardrobe/thumb.png" alt="Wick's Wardrobe">
       </div>
       <div class="card-meta">
-        <div class="card-name"><span class="apo">Wick's</span> Wardrobe</div>
+        <div class="card-name"><a href="/addons/wicks-wardrobe/"><span class="apo">Wick's</span> Wardrobe</a></div>
         <div class="card-tagline">Browse every TBC tier set and weapon on your own character. Click any item to preview it inline -- no vendor required.</div>
         <div class="card-slash">/wwd</div>
         <div class="card-actions">
@@ -730,6 +735,7 @@
 <footer>
   <div class="row">Wick · TBC Classic · MIT licensed code · Brand trademarked</div>
   <div class="row">
+    <a href="/addons/">All addons</a> ·
     <a href="https://discord.gg/GWGTMhYBZY">Discord</a> ·
     <a href="https://www.facebook.com/profile.php?id=61588703194645">Facebook</a> ·
     <a href="https://x.com/wicksmods">X</a> ·

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WickCore: the floor everything else stands on, for WoW Forever and TBC Classic</title>
+<meta name="description" content="The floor everything else stands on. Brand chrome, profiles and themes. One options panel for the suite. Client dialect shim and restriction guard.">
+<link rel="canonical" href="https://wicksmods.com/addons/wickcore/">
+<link rel="icon" type="image/png" sizes="256x256" href="/images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="WickCore: the floor everything else stands on, for WoW Forever and TBC Classic">
+<meta property="og:description" content="The floor everything else stands on. Brand chrome, profiles and themes. One options panel for the suite. Client dialect shim and restriction guard.">
+<meta property="og:image" content="https://wicksmods.com/images/core/thumb.png">
+<meta property="og:url" content="https://wicksmods.com/addons/wickcore/">
+<meta property="og:site_name" content="Wick's Mods">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wicksmods">
+<meta name="twitter:title" content="WickCore: the floor everything else stands on, for WoW Forever and TBC Classic">
+<meta name="twitter:description" content="The floor everything else stands on. Brand chrome, profiles and themes. One options panel for the suite. Client dialect shim and restriction guard.">
+<meta name="twitter:image" content="https://wicksmods.com/images/core/thumb.png">
+<meta name="theme-color" content="#0D0A14">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --fel:#4FC778; --void:#0D0A14; --shadow:#171124; --border:#383058; --text:#D4C8A1; --text-dim:#8F8870; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:var(--void); color:var(--text); }
+  body { font-family:'Space Grotesk', sans-serif; font-size:16px; line-height:1.6; min-height:100vh; }
+  a { color:var(--fel); text-decoration:none; } a:hover { color:var(--text); }
+  code { font-family:'Space Mono', monospace; font-size:0.9em; color:var(--text); background:var(--shadow); padding:0 4px; }
+  .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+  .top { border-bottom:1px solid var(--border); background:var(--shadow); }
+  .top .container { display:flex; align-items:center; justify-content:space-between; height:56px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:'Cinzel', serif; font-weight:700; letter-spacing:0.08em; color:var(--text); font-size:18px; }
+  .brand .apo { color:var(--fel); }
+  .nav a { margin-left:18px; font-size:14px; color:var(--text-dim); } .nav a:hover { color:var(--fel); }
+  .hero { padding:56px 0 36px; border-bottom:1px solid var(--border); }
+  .eyebrow { font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:var(--fel); margin-bottom:14px; }
+  h1 { font-family:'Cinzel', serif; font-weight:700; font-size:40px; line-height:1.15; color:var(--text); margin-bottom:14px; }
+  h1 .apo { color:var(--fel); }
+  .lede { font-size:19px; color:var(--text); max-width:760px; margin-bottom:22px; }
+  .meta { font-family:'Space Mono', monospace; font-size:13px; color:var(--text-dim); margin-bottom:22px; }
+  .meta span + span::before { content:'\00a0\00b7\00a0'; color:var(--border); }
+  .actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:10px 18px; border:1px solid var(--border); color:var(--text); font-weight:500; font-size:15px; }
+  .btn.primary { border-color:var(--fel); color:var(--fel); }
+  .btn:hover { border-color:var(--fel); color:var(--fel); }
+  .panel { position:relative; border:1px solid var(--border); background:var(--shadow); padding:22px; }
+  .panel::before, .panel::after { content:''; position:absolute; width:10px; height:10px; border-color:var(--fel); border-style:solid; }
+  .panel::before { top:-1px; left:-1px; border-width:2px 0 0 2px; }
+  .panel::after { bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; margin:36px 0; }
+  .thumb img { display:block; width:100%; height:auto; border:1px solid var(--border); }
+  h2 { font-family:'Cinzel', serif; font-weight:700; font-size:22px; color:var(--text); margin:36px 0 14px; }
+  h3 { font-size:17px; font-weight:600; color:var(--text); margin:22px 0 6px; }
+  h4 { font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--fel); margin:16px 0 6px; }
+  ul { padding-left:20px; } li { margin:4px 0; } p { margin:8px 0; }
+  .features li { margin:6px 0; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:16px; }
+  .shots img { display:block; width:100%; height:auto; border:1px solid var(--border); }
+  .log .ver { font-family:'Space Mono', monospace; color:var(--text-dim); font-size:13px; }
+  .suite { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:10px 24px; }
+  .suite a { font-size:15px; }
+  footer { border-top:1px solid var(--border); margin-top:56px; padding:28px 0 40px; color:var(--text-dim); font-size:14px; }
+  footer a { color:var(--text-dim); } footer a:hover { color:var(--fel); }
+  @media (max-width:760px) { .grid { grid-template-columns:1fr; } h1 { font-size:32px; } .top .container { height:auto; padding:10px 24px; } }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"WickCore","url":"https://wicksmods.com/addons/wickcore/","description":"The floor everything else stands on.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.12.0","dateModified":"2026-10-06","downloadUrl":"https://www.curseforge.com/wow/addons/wickcore","installUrl":"https://www.curseforge.com/wow/addons/wickcore","image":"https://wicksmods.com/images/core/thumb.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wickcore","https://github.com/Wicks-mods/WickCore"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Wick's Mods","item":"https://wicksmods.com/"},{"@type":"ListItem","position":2,"name":"All addons","item":"https://wicksmods.com/addons/"},{"@type":"ListItem","position":3,"name":"WickCore","item":"https://wicksmods.com/addons/wickcore/"}]}</script>
+</head>
+<body>
+<div class="top"><div class="container">
+  <a class="brand" href="/">WICK<span class="apo">'</span>S MODS</a>
+  <nav class="nav"><a href="/">Forever</a><a href="/tbc/">TBC Classic</a><a href="/ui/">Wick's UI</a><a href="/addons/">All addons</a><a href="https://discord.gg/GWGTMhYBZY">Discord</a></nav>
+</div></div>
+<section class="hero"><div class="container">
+  <div class="eyebrow">World of Warcraft: Forever and TBC Classic</div>
+  <h1>WickCore</h1>
+  <p class="lede">The floor everything else stands on.</p>
+  <div class="meta"><span>version 0.12.0</span><span>/wickcore</span><span>free, open source</span></div>
+  <div class="actions">
+    <a href="https://www.curseforge.com/wow/addons/wickcore" class="btn primary">Get it on CurseForge &rarr;</a>
+    <a href="https://github.com/Wicks-mods/WickCore" class="btn">Source on GitHub</a>
+    <a href="https://discord.gg/GWGTMhYBZY" class="btn">Discord</a>
+  </div>
+</div></section>
+<main class="container">
+  <div class="grid">
+    <div class="panel">
+      <h2 style="margin-top:0">What it does</h2>
+      <ul class="features"><li>Brand chrome, profiles and themes</li><li>One options panel for the suite</li><li>Client dialect shim and restriction guard</li><li>Minimap launcher and version broadcast</li><li>Optional settings store in macros</li></ul>
+      
+    </div>
+    <div class="thumb"><img src="/images/core/thumb.png" alt="WickCore card" width="920" height="520"></div>
+  </div>
+  
+  <h2>Latest changes</h2><div class="log"><h3>0.12.0 <span class="ver">2026-10-06</span></h3>
+<h4>Added</h4>
+<ul><li>Classic, a look in the game's own art: its window frames, title bars and close buttons, its tooltip border round panels, its buttons and check boxes, its font and gold. The art comes from the client, so on TBC Anniversary it is that client's and on Forever Forever's. Every Wick addon follows it, for players who want what the suite does without a look of its own. A Wick window of its own (the bags) wears the game's window frame and background, and the panels inside it the game's insets; buttons made from the game's templates keep its art at any size.</li></ul>
+<h3>0.11.1 <span class="ver">2026-10-05</span></h3>
+<h4>Fixed</h4>
+<ul><li>Every Wick addon shows up as a broker feed (LibDataBroker) when a broker library is installed, including the one Wick's UI brings for its info panels. WickCore looked for the library once, as it loaded, before any addon that brings one, so none of the launchers were ever published and none could go in a broker slot.</li><li>Picking Wick Modern or Wick OG keeps the theme you have. It had been switching you to your class theme, so on TBC a try of Wick Modern and a return to Wick OG left you on your class colour instead of Fel. Coming back from a look with its own colours (Rebel, Crisp and the rest) gives you the Wick theme you had before that look.</li></ul>
+<h3>0.11.0 <span class="ver">2026-10-03</span></h3>
+<h4>Added</h4>
+<ul><li>TBC Classic Anniversary. WickCore loads on 2.5.6 as well as Forever, from one folder and one version. The client is the same engine generation as Forever with the Classic interface on top, so the modern dialect, the Settings panel and Edit Mode are all there; what it lacks is read off at load as capability flags (<code>Client.hasEditMode</code>, <code>hasSettings</code>, <code>hasAuraContainer</code>, <code>hasPing</code>, <code>hasBossFrames</code>, <code>hasObjectiveTracker</code>), which products branch on instead of the flavour.</li><li>A TBC-shaped stub client for the offline harness (<code>run.py --tbc</code>, <code>--all</code> for every shape).</li><li>Movable frames. A product registers a bar, button or counter the player can drag (<code>Chrome:RegisterMovable</code>, or <code>A:RegisterMovable</code> on its addon object), with where it sits as the default. A UI with movers of its own (Wick's UI) lists it with everything else and takes over its place, telling the product to stand its own drag down; without one nothing changes. <code>Chrome:RestorePosition</code> leaves a claimed frame alone.</li></ul>
+<h4>Changed</h4>
+<ul><li>On TBC a character starts on Wick OG in fel green, the look every TBC addon has always had, so an update changes nothing a player did not ask for. Modern and the class colours are one click away in /wickcore options. Forever still starts on Wick Modern.</li><li>Combat is combat on every client: <code>Restrict:IsCombat()</code> reads combat lockdown as well as the restriction state, the regen events are watched everywhere, and one Combat notification fires per change of state whichever event carried it. TBC has the restriction API and never restricts anything.</li><li>The macro settings store only arms on Forever, the client it was written for. Elsewhere it says it is not needed and never offers.</li><li>The line naming a blocked or forbidden call now prints only with /wickcore debug on. The record is kept either way for /wickcore refused.</li><li>The options root no longer names a client.</li></ul>
+<h4>Fixed</h4>
+<ul><li>Opening a Custom colour picker switched the theme to Custom before anything was picked, and Cancel put the colours back but not the theme.</li><li><code>Dialect.IsSpellKnown(id, true)</code> passed a boolean where <code>C_SpellBook.IsSpellKnown</code> wants a spell bank, so every pet spell read as unknown.</li></ul></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WickCore/blob/main/CHANGELOG.md">the repository</a>.</p>
+  <h2>More from the suite</h2>
+  <div class="suite"><a href="/addons/wicks-bags/">Wick's Bags</a><a href="/addons/wicks-beasts-and-things/">Wick's Beasts and Things</a><a href="/addons/wicks-cd-tracker/">Wick's CD Tracker</a><a href="/addons/wicks-combat-log/">Wick's Combat Log</a><a href="/addons/wicks-comforts/">Wick's Comforts</a><a href="/addons/wicks-demons-and-things/">Wick's Demons and Things</a><a href="/addons/wicks-gear/">Wick's Gear</a><a href="/addons/wicks-ledger/">Wick's Ledger</a><a href="/addons/wicks-macro-builder/">Wick's Macro Builder</a><a href="/addons/wicks-poisons-and-things/">Wick's Poisons and Things</a><a href="/addons/wicks-quest-key/">Wick's Quest Key</a><a href="/addons/wicks-reminders/">Wick's Reminders</a><a href="/addons/wicks-seals-and-things/">Wick's Seals and Things</a><a href="/addons/wicks-stances-and-things/">Wick's Stances and Things</a><a href="/addons/wicks-stats/">Wick's Stats</a><a href="/addons/wicks-survivors/">Wick's Survivors</a><a href="/addons/wicks-tbc-bis-tracker/">Wick's TBC BIS Tracker</a><a href="/addons/wicks-totems-and-things/">Wick's Totems and Things</a><a href="/addons/trade-hall/">Wick's Trade Hall</a><a href="/addons/wicks-travel-form/">Wick's Travel Form</a><a href="/ui/">Wick's UI</a><a href="/addons/wicks-wardrobe/">Wick's Wardrobe</a></div>
+</main>
+<footer><div class="container">
+  <a href="https://discord.gg/GWGTMhYBZY">Discord</a> &middot;
+  <a href="https://www.facebook.com/profile.php?id=61588703194645">Facebook</a> &middot;
+  <a href="https://x.com/wicksmods">X</a> &middot;
+  <a href="https://github.com/Wicks-mods">Wick's Mods on GitHub</a> &middot;
+  <a href="https://www.curseforge.com/members/wicksmods/projects">Wick on CurseForge</a> &middot;
+  <a href="/privacy/">Privacy</a>
+</div></footer>
+</body>
+</html>

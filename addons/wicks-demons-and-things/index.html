@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wick's Demons and Things: the warlock kit, for WoW Forever and TBC Classic</title>
+<meta name="description" content="Warlock bars: stones and rituals, demons, cooldowns and procs, and your shards. Healthstone and Soulstone in one click, a summon button for every demon...">
+<link rel="canonical" href="https://wicksmods.com/addons/wicks-demons-and-things/">
+<link rel="icon" type="image/png" sizes="256x256" href="/images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wick's Demons and Things: the warlock kit, for WoW Forever and TBC Classic">
+<meta property="og:description" content="Warlock bars: stones and rituals, demons, cooldowns and procs, and your shards. Healthstone and Soulstone in one click, a summon button for every demon...">
+<meta property="og:image" content="https://wicksmods.com/images/demons/thumb-2x.png">
+<meta property="og:url" content="https://wicksmods.com/addons/wicks-demons-and-things/">
+<meta property="og:site_name" content="Wick's Mods">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@wicksmods">
+<meta name="twitter:title" content="Wick's Demons and Things: the warlock kit, for WoW Forever and TBC Classic">
+<meta name="twitter:description" content="Warlock bars: stones and rituals, demons, cooldowns and procs, and your shards. Healthstone and Soulstone in one click, a summon button for every demon...">
+<meta name="twitter:image" content="https://wicksmods.com/images/demons/thumb-2x.png">
+<meta name="theme-color" content="#0D0A14">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --fel:#4FC778; --void:#0D0A14; --shadow:#171124; --border:#383058; --text:#D4C8A1; --text-dim:#8F8870; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { background:var(--void); color:var(--text); }
+  body { font-family:'Space Grotesk', sans-serif; font-size:16px; line-height:1.6; min-height:100vh; }
+  a { color:var(--fel); text-decoration:none; } a:hover { color:var(--text); }
+  code { font-family:'Space Mono', monospace; font-size:0.9em; color:var(--text); background:var(--shadow); padding:0 4px; }
+  .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+  .top { border-bottom:1px solid var(--border); background:var(--shadow); }
+  .top .container { display:flex; align-items:center; justify-content:space-between; height:56px; gap:16px; flex-wrap:wrap; }
+  .brand { font-family:'Cinzel', serif; font-weight:700; letter-spacing:0.08em; color:var(--text); font-size:18px; }
+  .brand .apo { color:var(--fel); }
+  .nav a { margin-left:18px; font-size:14px; color:var(--text-dim); } .nav a:hover { color:var(--fel); }
+  .hero { padding:56px 0 36px; border-bottom:1px solid var(--border); }
+  .eyebrow { font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.28em; text-transform:uppercase; color:var(--fel); margin-bottom:14px; }
+  h1 { font-family:'Cinzel', serif; font-weight:700; font-size:40px; line-height:1.15; color:var(--text); margin-bottom:14px; }
+  h1 .apo { color:var(--fel); }
+  .lede { font-size:19px; color:var(--text); max-width:760px; margin-bottom:22px; }
+  .meta { font-family:'Space Mono', monospace; font-size:13px; color:var(--text-dim); margin-bottom:22px; }
+  .meta span + span::before { content:'\00a0\00b7\00a0'; color:var(--border); }
+  .actions { display:flex; gap:12px; flex-wrap:wrap; }
+  .btn { display:inline-block; padding:10px 18px; border:1px solid var(--border); color:var(--text); font-weight:500; font-size:15px; }
+  .btn.primary { border-color:var(--fel); color:var(--fel); }
+  .btn:hover { border-color:var(--fel); color:var(--fel); }
+  .panel { position:relative; border:1px solid var(--border); background:var(--shadow); padding:22px; }
+  .panel::before, .panel::after { content:''; position:absolute; width:10px; height:10px; border-color:var(--fel); border-style:solid; }
+  .panel::before { top:-1px; left:-1px; border-width:2px 0 0 2px; }
+  .panel::after { bottom:-1px; right:-1px; border-width:0 2px 2px 0; }
+  .grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; align-items:start; margin:36px 0; }
+  .thumb img { display:block; width:100%; height:auto; border:1px solid var(--border); }
+  h2 { font-family:'Cinzel', serif; font-weight:700; font-size:22px; color:var(--text); margin:36px 0 14px; }
+  h3 { font-size:17px; font-weight:600; color:var(--text); margin:22px 0 6px; }
+  h4 { font-family:'Space Mono', monospace; font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--fel); margin:16px 0 6px; }
+  ul { padding-left:20px; } li { margin:4px 0; } p { margin:8px 0; }
+  .features li { margin:6px 0; }
+  .shots { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); gap:16px; }
+  .shots img { display:block; width:100%; height:auto; border:1px solid var(--border); }
+  .log .ver { font-family:'Space Mono', monospace; color:var(--text-dim); font-size:13px; }
+  .suite { display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:10px 24px; }
+  .suite a { font-size:15px; }
+  footer { border-top:1px solid var(--border); margin-top:56px; padding:28px 0 40px; color:var(--text-dim); font-size:14px; }
+  footer a { color:var(--text-dim); } footer a:hover { color:var(--fel); }
+  @media (max-width:760px) { .grid { grid-template-columns:1fr; } h1 { font-size:32px; } .top .container { height:auto; padding:10px 24px; } }
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Demons and Things","url":"https://wicksmods.com/addons/wicks-demons-and-things/","description":"Warlock bars: stones and rituals, demons, cooldowns and procs, and your shards. Healthstone and Soulstone in one click, a summon button for every demon you know.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.9.0","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-demons-and-things","installUrl":"https://www.curseforge.com/wow/addons/wicks-demons-and-things","image":"https://wicksmods.com/images/demons/thumb-2x.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-demons-and-things","https://github.com/Wicks-mods/WicksDemonsAndThings"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Wick's Mods","item":"https://wicksmods.com/"},{"@type":"ListItem","position":2,"name":"All addons","item":"https://wicksmods.com/addons/"},{"@type":"ListItem","position":3,"name":"Wick's Demons and Things","item":"https://wicksmods.com/addons/wicks-demons-and-things/"}]}</script>
+</head>
+<body>
+<div class="top"><div class="container">
+  <a class="brand" href="/">WICK<span class="apo">'</span>S MODS</a>
+  <nav class="nav"><a href="/">Forever</a><a href="/tbc/">TBC Classic</a><a href="/ui/">Wick's UI</a><a href="/addons/">All addons</a><a href="https://discord.gg/GWGTMhYBZY">Discord</a></nav>
+</div></div>
+<section class="hero"><div class="container">
+  <div class="eyebrow">World of Warcraft: Forever and TBC Classic</div>
+  <h1>Wick<span class="apo">'</span>s Demons and Things</h1>
+  <p class="lede">Warlock bars: stones and rituals, demons, cooldowns and procs, and your shards. Healthstone and Soulstone in one click, a summon button for every demon you know.</p>
+  <div class="meta"><span>version 0.9.0</span><span>/wdt</span><span>free, open source</span></div>
+  <div class="actions">
+    <a href="https://www.curseforge.com/wow/addons/wicks-demons-and-things" class="btn primary">Get it on CurseForge &rarr;</a>
+    <a href="https://github.com/Wicks-mods/WicksDemonsAndThings" class="btn">Source on GitHub</a>
+    <a href="https://discord.gg/GWGTMhYBZY" class="btn">Discord</a>
+  </div>
+</div></section>
+<main class="container">
+  <div class="grid">
+    <div class="panel">
+      <h2 style="margin-top:0">What it does</h2>
+      <ul class="features"><li>Healthstone and Soulstone: use one, or make one</li><li>A summon key for every demon you know</li><li>Soul shards at a glance</li><li>Talents, checklist, racials and a cooldown bar</li><li>Healthstone and Soulstone in one click, rituals as you learn them</li><li>A summon button for every demon you know</li><li>Cooldowns and Shadow Trance at a glance</li><li>Soul shard counter</li></ul>
+      <p style="margin-top:14px;color:var(--text-dim)">Needs <a href="/addons/wickcore/">WickCore</a>, the shared base every Wick addon draws from. CurseForge installs it alongside.</p>
+    </div>
+    <div class="thumb"><img src="/images/demons/thumb-2x.png" alt="Wick's Demons and Things card" width="920" height="520"></div>
+  </div>
+  
+  <h2>Latest changes</h2><div class="log"><h3>0.9.0 <span class="ver"></span></h3>
+<p>The warlock kit's first release for the WoW Forever beta. It carries the suite's single version number, so the suite goes to 1.0.0 together at launch.</p>
+<ul><li>Soul bar: Healthstone and Soulstone, one button each that uses the stone if you carry one and makes one if you do not, with Ritual of Summoning, Ritual of Souls and Eye of Kilrogg as you learn them.</li><li>Pet bar: a summon button for each demon you know, the one that is out lit up, with Soul Link and Sacrifice once talented.</li><li>Shard counter: your soul shards at a glance.</li><li>Cooldown bar: a row of icons for the spells you name, off until you turn it on under Options or with /wdt cd.</li><li>Talents, a pre-pull checklist and racials in the kit window (/wdt kit).</li><li>A locked bar moves while you hold Shift, so a lock only stops an accidental nudge.</li><li>The bars take the look and theme you pick in WickCore.</li><li>Without WickCore it says so once, with a link to get it.</li></ul>
+<h3>1.0.0 <span class="ver">2026-09-17</span></h3>
+<h4>Rebuilt as a loadout kit on WickCore</h4>
+<p>Forever inherits Midnight's addon rules, so the cooldown and proc tracker is gone: those values are secret in combat. The soul bar, pet bar and shard counter carry over on WickCore's dialect shim, and the kit gains the talent layer, a pre-pull checklist and a racials row.</p>
+<ul><li>Requires WickCore. Interface 16001.</li><li>Settings move into a WickCore profile.</li><li>Cooldown tracker removed. Cooldown display on the bars passes secret values straight to the widget and never compares them.</li><li>Aura reads route through WickCore's guard and return nothing while blocked.</li><li>Shard counter falls back to the soul shard resource when the bag count is zero.</li><li>Talents: export, import, save, apply, through Blizzard's own parser.</li><li>Pre-pull checklist and racials in the kit panel (/wdt kit).</li><li>Minimap launcher and a page under Options, Wick's Mods.</li></ul>
+<h3>0.1.1 <span class="ver"></span></h3>
+<p>Previous TBC Anniversary builds lived in the deployed AddOns folder only.</p></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksDemonsAndThings/blob/main/CHANGELOG.md">the repository</a>.</p>
+  <h2>More from the suite</h2>
+  <div class="suite"><a href="/addons/wicks-bags/">Wick's Bags</a><a href="/addons/wicks-beasts-and-things/">Wick's Beasts and Things</a><a href="/addons/wicks-cd-tracker/">Wick's CD Tracker</a><a href="/addons/wicks-combat-log/">Wick's Combat Log</a><a href="/addons/wicks-comforts/">Wick's Comforts</a><a href="/addons/wicks-gear/">Wick's Gear</a><a href="/addons/wicks-ledger/">Wick's Ledger</a><a href="/addons/wicks-macro-builder/">Wick's Macro Builder</a><a href="/addons/wicks-poisons-and-things/">Wick's Poisons and Things</a><a href="/addons/wicks-quest-key/">Wick's Quest Key</a><a href="/addons/wicks-reminders/">Wick's Reminders</a><a href="/addons/wicks-seals-and-things/">Wick's Seals and Things</a><a href="/addons/wicks-stances-and-things/">Wick's Stances and Things</a><a href="/addons/wicks-stats/">Wick's Stats</a><a href="/addons/wicks-survivors/">Wick's Survivors</a><a href="/addons/wicks-tbc-bis-tracker/">Wick's TBC BIS Tracker</a><a href="/addons/wicks-totems-and-things/">Wick's Totems and Things</a><a href="/addons/trade-hall/">Wick's Trade Hall</a><a href="/addons/wicks-travel-form/">Wick's Travel Form</a><a href="/ui/">Wick's UI</a><a href="/addons/wicks-wardrobe/">Wick's Wardrobe</a></div>
+</main>
+<footer><div class="container">
+  <a href="https://discord.gg/GWGTMhYBZY">Discord</a> &middot;
+  <a href="https://www.facebook.com/profile.php?id=61588703194645">Facebook</a> &middot;
+  <a href="https://x.com/wicksmods">X</a> &middot;
+  <a href="https://github.com/Wicks-mods">Wick's Mods on GitHub</a> &middot;
+  <a href="https://www.curseforge.com/members/wicksmods/projects">Wick on CurseForge</a> &middot;
+  <a href="/privacy/">Privacy</a>
+</div></footer>
+</body>
+</html>
