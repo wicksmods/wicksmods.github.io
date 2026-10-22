@@ -120,8 +120,13 @@ jobs:
 
           NOW=$(date -u +%Y-%m-%dT%H:%M:%SZ)
           # Build a JSON object: { "slug": "live"|"pending", ... }
-          # Pending = HEAD returns non-2xx (typically 404 during CF review).
+          # Pending = the public page is a 404, which is what CurseForge
+          # serves while it reviews a fresh project. Anything else that is
+          # not a 200 (a 403 from a bot check, a timeout) says nothing about
+          # approval, so the slug keeps the state it had; a slug never seen
+          # before starts pending.
           STATUS_JSON='{}'
+          PREV_JSON=$(cat data/addons-status.json 2>/dev/null || echo '{}')
           for SLUG in "${SLUGS[@]}"; do
             CODE=$(curl -sI -o /dev/null -w '%{http_code}' \
               -A "Wicksmods landing-page status checker (https://github.com/wicksmods/wicksmods.github.io)" \
@@ -129,8 +134,10 @@ jobs:
               "https://www.curseforge.com/wow/addons/$SLUG" || echo 000)
             if [ "$CODE" = "200" ]; then
               STATE=live
-            else
+            elif [ "$CODE" = "404" ]; then
               STATE=pending
+            else
+              STATE=$(jq -r --arg s "$SLUG" '.status[$s] // "pending"' <<< "$PREV_JSON")
             fi
             echo "  $SLUG : HTTP $CODE → $STATE"
             STATUS_JSON=$(jq --arg s "$SLUG" --arg v "$STATE" '. + {($s): $v}' <<< "$STATUS_JSON")
