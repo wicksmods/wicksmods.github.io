@@ -64,7 +64,7 @@
   footer a { color:var(--text-dim); } footer a:hover { color:var(--fel); }
   @media (max-width:760px) { .grid { grid-template-columns:1fr; } h1 { font-size:32px; } .top .container { height:auto; padding:10px 24px; } }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Bags","url":"https://wicksmods.com/addons/wicks-bags/","description":"Bags and bank in one window, sorted into categories you control. Quiver and reagents collapse to a single counted tile.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.9.8","dateModified":"2026-10-22","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-bags","installUrl":"https://www.curseforge.com/wow/addons/wicks-bags","image":"https://wicksmods.com/images/bags/thumb-2x.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-bags","https://github.com/Wicks-mods/WicksBags"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Bags","url":"https://wicksmods.com/addons/wicks-bags/","description":"Bags and bank in one window, sorted into categories you control. Quiver and reagents collapse to a single counted tile.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.9.9","dateModified":"2026-11-05","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-bags","installUrl":"https://www.curseforge.com/wow/addons/wicks-bags","image":"https://wicksmods.com/images/bags/thumb-2x.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-bags","https://github.com/Wicks-mods/WicksBags"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Wick's Mods","item":"https://wicksmods.com/"},{"@type":"ListItem","position":2,"name":"All addons","item":"https://wicksmods.com/addons/"},{"@type":"ListItem","position":3,"name":"Wick's Bags","item":"https://wicksmods.com/addons/wicks-bags/"}]}</script>
 </head>
 <body>
@@ -76,7 +76,7 @@
   <div class="eyebrow">World of Warcraft: Forever and TBC Classic</div>
   <h1>Wick<span class="apo">'</span>s Bags</h1>
   <p class="lede">Bags and bank in one window, sorted into categories you control. Quiver and reagents collapse to a single counted tile.</p>
-  <div class="meta"><span>version 0.9.8</span><span>/wbags</span><span>free, open source</span></div>
+  <div class="meta"><span>version 0.9.9</span><span>/wbags</span><span>free, open source</span></div>
   <div class="actions">
     <a href="https://www.curseforge.com/wow/addons/wicks-bags" class="btn primary">Get it on CurseForge &rarr;</a>
     <a href="https://github.com/Wicks-mods/WicksBags" class="btn">Source on GitHub</a>
@@ -93,17 +93,17 @@
     <div class="thumb"><img src="/images/bags/thumb-2x.png" alt="Wick's Bags card" width="920" height="520"></div>
   </div>
   <h2>In game</h2><div class="shots"><img src="/images/bags/screenshots/main.png" alt="Wick's Bags in game" loading="lazy"></div>
-  <h2>Latest changes</h2><div class="log"><h3>0.9.8 <span class="ver">2026-10-22</span></h3>
+  <h2>Latest changes</h2><div class="log"><h3>0.9.9 <span class="ver">2026-11-05</span></h3>
+<h4>Fixed</h4>
+<ul><li>An item no longer turns red in a fight and stays red after it. A level or skill gained in combat made the bag read tooltips again while the game was still withholding them, and it kept what it read. Nothing is read or forgotten in combat now; the slots are read once the fight ends.</li></ul>
+<h4>Changed</h4>
+<ul><li>In WickCore's Cartridge look, section headings are measured in the look's own font and their bands grow to fit it, and the header buttons fit their labels, so nothing spills into the next section. Every other look keeps its sizes.</li></ul>
+<h3>0.9.8 <span class="ver">2026-10-22</span></h3>
 <h4>Added</h4>
 <ul><li>A red tint on any item you cannot use: a level, class, proficiency or reputation you do not have yet, or a recipe you already know. The game writes those on the tooltip in red; Wick's Bags reads that once per item and keeps the answer until you gain a level, a skill, a recipe or a reputation step, so it costs nothing as you play. Red tint on items you cannot use, under Options, switches it off.</li></ul>
 <h3>0.9.7 <span class="ver">2026-10-22</span></h3>
 <h4>Added</h4>
-<ul><li>A Junk button in the bag's title bar, next to Sort: one click destroys the cheapest grey item in your bags, for quick room. Cheapest by what a vendor would give for the stack, so what goes is what you would miss least, and only grey items are ever chosen. The tooltip names the item before you click, and chat says what went. Junk button in the title bar, under Options, hides it.</li></ul>
-<h3>0.9.6 <span class="ver">2026-10-09</span></h3>
-<h4>Changed</h4>
-<ul><li>On Forever's controller interface the game's own bags are left to it: they are the ones made for the controller, with its navigation and its item panel, and its radial opens them. Wick's Bags keeps to the keyboard. With a controller in hand the game's bags are no longer kept out of sight at a vendor or the bank, Wick's Bags is not opened there for it, and a bank or guild vault visit runs in the game's own window rather than Wick's Bank.</li></ul>
-<h4>Fixed</h4>
-<ul><li>An item's cooldown time fits inside its own slot. The game drew it in the font it uses for action buttons, which is wider than a bag slot, so the time ran into the next slot, and two items on a shared cooldown side by side read &quot;49m49m&quot;.</li></ul></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksBags/blob/main/CHANGELOG.md">the repository</a>.</p>
+<ul><li>A Junk button in the bag's title bar, next to Sort: one click destroys the cheapest grey item in your bags, for quick room. Cheapest by what a vendor would give for the stack, so what goes is what you would miss least, and only grey items are ever chosen. The tooltip names the item before you click, and chat says what went. Junk button in the title bar, under Options, hides it.</li></ul></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksBags/blob/main/CHANGELOG.md">the repository</a>.</p>
   <h2>More from the suite</h2>
   <div class="suite"><a href="/addons/wicks-beasts-and-things/">Wick's Beasts and Things</a><a href="/addons/wicks-cd-tracker/">Wick's CD Tracker</a><a href="/addons/wicks-combat-log/">Wick's Combat Log</a><a href="/addons/wicks-comforts/">Wick's Comforts</a><a href="/addons/wicks-demons-and-things/">Wick's Demons and Things</a><a href="/addons/wicks-gear/">Wick's Gear</a><a href="/addons/wicks-ledger/">Wick's Ledger</a><a href="/addons/wicks-macro-builder/">Wick's Macro Builder</a><a href="/addons/wicks-map/">Wick's Map</a><a href="/addons/wicks-poisons-and-things/">Wick's Poisons and Things</a><a href="/addons/wicks-quest-key/">Wick's Quest Key</a><a href="/addons/wicks-reminders/">Wick's Reminders</a><a href="/addons/wicks-seals-and-things/">Wick's Seals and Things</a><a href="/addons/wicks-stances-and-things/">Wick's Stances and Things</a><a href="/addons/wicks-stats/">Wick's Stats</a><a href="/addons/wicks-survivors/">Wick's Survivors</a><a href="/addons/wicks-tbc-bis-tracker/">Wick's TBC BIS Tracker</a><a href="/addons/wicks-totems-and-things/">Wick's Totems and Things</a><a href="/addons/trade-hall/">Wick's Trade Hall</a><a href="/addons/wicks-travel-form/">Wick's Travel Form</a><a href="/ui/">Wick's UI</a><a href="/addons/wicks-wardrobe/">Wick's Wardrobe</a></div>
 </main>
