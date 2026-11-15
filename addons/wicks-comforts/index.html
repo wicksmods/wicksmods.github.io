@@ -64,7 +64,7 @@
   footer a { color:var(--text-dim); } footer a:hover { color:var(--fel); }
   @media (max-width:760px) { .grid { grid-template-columns:1fr; } h1 { font-size:32px; } .top .container { height:auto; padding:10px 24px; } }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Comforts","url":"https://wicksmods.com/addons/wicks-comforts/","description":"Square minimap in Wick chrome, richer tooltips, auto loot, auto repair and junk selling. Every one of them off until you turn it on, bar the fix for an error the game itself throws.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.9.4","dateModified":"2026-10-09","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-comforts","installUrl":"https://www.curseforge.com/wow/addons/wicks-comforts","image":"https://wicksmods.com/images/comforts/thumb.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-comforts","https://github.com/Wicks-mods/WicksComforts"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Comforts","url":"https://wicksmods.com/addons/wicks-comforts/","description":"Square minimap in Wick chrome, richer tooltips, auto loot, auto repair and junk selling. Every one of them off until you turn it on, bar the fix for an error the game itself throws.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.9.5","dateModified":"2026-11-15","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-comforts","installUrl":"https://www.curseforge.com/wow/addons/wicks-comforts","image":"https://wicksmods.com/images/comforts/thumb.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-comforts","https://github.com/Wicks-mods/WicksComforts"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Wick's Mods","item":"https://wicksmods.com/"},{"@type":"ListItem","position":2,"name":"All addons","item":"https://wicksmods.com/addons/"},{"@type":"ListItem","position":3,"name":"Wick's Comforts","item":"https://wicksmods.com/addons/wicks-comforts/"}]}</script>
 </head>
 <body>
@@ -76,7 +76,7 @@
   <div class="eyebrow">World of Warcraft: Forever and TBC Classic</div>
   <h1>Wick<span class="apo">'</span>s Comforts</h1>
   <p class="lede">Square minimap in Wick chrome, richer tooltips, auto loot, auto repair and junk selling. Every one of them off until you turn it on, bar the fix for an error the game itself throws.</p>
-  <div class="meta"><span>version 0.9.4</span><span>/wcomfort</span><span>free, open source</span></div>
+  <div class="meta"><span>version 0.9.5</span><span>/wcomfort</span><span>free, open source</span></div>
   <div class="actions">
     <a href="https://www.curseforge.com/wow/addons/wicks-comforts" class="btn primary">Get it on CurseForge &rarr;</a>
     <a href="https://github.com/Wicks-mods/WicksComforts" class="btn">Source on GitHub</a>
@@ -93,19 +93,16 @@
     <div class="thumb"><img src="/images/comforts/thumb.png" alt="Wick's Comforts card" width="920" height="520"></div>
   </div>
   
-  <h2>Latest changes</h2><div class="log"><h3>0.9.4 <span class="ver">2026-10-09</span></h3>
+  <h2>Latest changes</h2><div class="log"><h3>0.9.5 <span class="ver">2026-11-15</span></h3>
+<ul><li>Shows in the game's addon list with an icon and the two-tone Wick title, under a Wick's Mods heading.</li></ul>
+<h3>0.9.4 <span class="ver">2026-10-09</span></h3>
 <h4>Fixed</h4>
 <ul><li>Wick's code no longer closes the game's own dialogs. Confirming a bind-on-pickup item left its dialog for the game to close, which it does as the loot window goes. An escort or shared quest's dialog is left for you to answer. Closing them from an addon tainted the game's list of shown dialogs; on the controller the game's focus code then ran past the client's time limit in Wick's name, and the game lagged.</li></ul>
 <h3>0.9.3 <span class="ver">2026-10-03</span></h3>
 <h4>Added</h4>
 <ul><li>TBC Classic Anniversary. The same folder and version now load on 2.5.6 as well as Forever, on WickCore's TBC build. The old 0.1.0 copy that sat in the TBC AddOns folder, unable to load without WickCore, is gone.</li></ul>
 <h4>Fixed</h4>
-<ul><li>Player names in tooltips take the class colours chosen in WickCore, the game's own set or the Classic era set, like the rest of the suite.</li></ul>
-<h3>0.9.2 <span class="ver">2026-09-30</span></h3>
-<h4>Changed</h4>
-<ul><li>The square minimap stands aside while Wick's UI looks after the minimap, so the two never fight over it.</li><li>The options no longer say mouse wheel zoom does not work on the minimap. It does.</li></ul>
-<h4>Fixed</h4>
-<ul><li>A tooltip for a unit the client keeps secret is skipped instead of failing.</li></ul></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksComforts/blob/main/CHANGELOG.md">the repository</a>.</p>
+<ul><li>Player names in tooltips take the class colours chosen in WickCore, the game's own set or the Classic era set, like the rest of the suite.</li></ul></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksComforts/blob/main/CHANGELOG.md">the repository</a>.</p>
   <h2>More from the suite</h2>
   <div class="suite"><a href="/addons/wicks-bags/">Wick's Bags</a><a href="/addons/wicks-beasts-and-things/">Wick's Beasts and Things</a><a href="/addons/wicks-cd-tracker/">Wick's CD Tracker</a><a href="/addons/wicks-combat-log/">Wick's Combat Log</a><a href="/addons/wicks-demons-and-things/">Wick's Demons and Things</a><a href="/addons/wicks-gear/">Wick's Gear</a><a href="/addons/wicks-ledger/">Wick's Ledger</a><a href="/addons/wicks-macro-builder/">Wick's Macro Builder</a><a href="/addons/wicks-map/">Wick's Map</a><a href="/addons/wicks-poisons-and-things/">Wick's Poisons and Things</a><a href="/addons/wicks-quest-key/">Wick's Quest Key</a><a href="/addons/wicks-reminders/">Wick's Reminders</a><a href="/addons/wicks-seals-and-things/">Wick's Seals and Things</a><a href="/addons/wicks-stances-and-things/">Wick's Stances and Things</a><a href="/addons/wicks-stats/">Wick's Stats</a><a href="/addons/wicks-survivors/">Wick's Survivors</a><a href="/addons/wicks-tbc-bis-tracker/">Wick's TBC BIS Tracker</a><a href="/addons/wicks-totems-and-things/">Wick's Totems and Things</a><a href="/addons/trade-hall/">Wick's Trade Hall</a><a href="/addons/wicks-travel-form/">Wick's Travel Form</a><a href="/ui/">Wick's UI</a><a href="/addons/wicks-wardrobe/">Wick's Wardrobe</a></div>
 </main>

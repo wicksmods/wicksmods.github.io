@@ -64,7 +64,7 @@
   footer a { color:var(--text-dim); } footer a:hover { color:var(--fel); }
   @media (max-width:760px) { .grid { grid-template-columns:1fr; } h1 { font-size:32px; } .top .container { height:auto; padding:10px 24px; } }
 </style>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Macro Builder","url":"https://wicksmods.com/addons/wicks-macro-builder/","description":"Click-to-insert chips, drag macros to action bars, curated presets for all 9 classes.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.2.3","dateModified":"2026-10-01","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-macro-builder","installUrl":"https://www.curseforge.com/wow/addons/wicks-macro-builder","image":"https://wicksmods.com/images/macro/thumb-2x.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-macro-builder","https://github.com/Wicks-mods/WicksMacroBuilder"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Wick's Macro Builder","url":"https://wicksmods.com/addons/wicks-macro-builder/","description":"Click-to-insert chips, drag macros to action bars, curated presets for all 9 classes.","applicationCategory":"GameApplication","applicationSubCategory":"World of Warcraft addon","operatingSystem":"Windows, macOS","softwareVersion":"0.2.4","dateModified":"2026-11-15","downloadUrl":"https://www.curseforge.com/wow/addons/wicks-macro-builder","installUrl":"https://www.curseforge.com/wow/addons/wicks-macro-builder","image":"https://wicksmods.com/images/macro/thumb-2x.png","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Organization","name":"Wick's Mods","url":"https://wicksmods.com"},"isPartOf":{"@type":"SoftwareApplication","name":"Wick's Mods suite","url":"https://wicksmods.com"},"sameAs":["https://www.curseforge.com/wow/addons/wicks-macro-builder","https://github.com/Wicks-mods/WicksMacroBuilder"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Wick's Mods","item":"https://wicksmods.com/"},{"@type":"ListItem","position":2,"name":"All addons","item":"https://wicksmods.com/addons/"},{"@type":"ListItem","position":3,"name":"Wick's Macro Builder","item":"https://wicksmods.com/addons/wicks-macro-builder/"}]}</script>
 </head>
 <body>
@@ -76,7 +76,7 @@
   <div class="eyebrow">TBC Classic Anniversary</div>
   <h1>Wick<span class="apo">'</span>s Macro Builder</h1>
   <p class="lede">Click-to-insert chips, drag macros to action bars, curated presets for all 9 classes.</p>
-  <div class="meta"><span>version 0.2.3</span><span>/wsmb</span><span>free, open source</span></div>
+  <div class="meta"><span>version 0.2.4</span><span>/wsmb</span><span>free, open source</span></div>
   <div class="actions">
     <a href="https://www.curseforge.com/wow/addons/wicks-macro-builder" class="btn primary">Get it on CurseForge &rarr;</a>
     <a href="https://github.com/Wicks-mods/WicksMacroBuilder" class="btn">Source on GitHub</a>
@@ -93,17 +93,15 @@
     <div class="thumb"><img src="/images/macro/thumb-2x.png" alt="Wick's Macro Builder card" width="920" height="520"></div>
   </div>
   <h2>In game</h2><div class="shots"><img src="/images/macro/screenshots/main.png" alt="Wick's Macro Builder in game" loading="lazy"></div>
-  <h2>Latest changes</h2><div class="log"><h3>0.2.3 <span class="ver">2026-10-01</span></h3>
+  <h2>Latest changes</h2><div class="log"><h3>0.2.4 <span class="ver">2026-11-15</span></h3>
+<ul><li>Fixed an error when saving a macro or resizing the window after a settings reset.</li><li>Shows in the game's addon list with an icon and the two-tone Wick title, under a Wick's Mods heading.</li></ul>
+<h3>0.2.3 <span class="ver">2026-10-01</span></h3>
 <h4>Fixed</h4>
 <ul><li>Loads on the 2.5.6 client without being marked out of date. The addon now lists interface 20506 alongside 20505.</li></ul>
 <h3>0.2.2 <span class="ver">2026-04-26</span></h3>
 <h4>Title bar slim revert + close-button glyph fix</h4>
 <p>Reverted the heavier 32px header from 0.2.1 back to the slim CD-Tracker chrome that the suite shipped pre-harmonization, 22px tall, FRIZQT 12 (no outline), plain <code>×</code> close button, drop the fel-green underline. Kept the two-tone title color (<code>Wick's</code> in fel-green, <code>Macro Builder</code> in cream) since that's the part of the 0.2.1 work that worked.</p>
 <p>Also: the previous <code>✕</code> (U+2715) close glyph was rendering as a tofu/missing-glyph box in <code>Fonts\FRIZQT__.TTF</code>. Swapped to <code>×</code> (U+00D7) which renders cleanly. This is the visible bug fix users will notice most.</p>
-<p>No functional changes.</p>
-<h3>0.2.1 <span class="ver">2026-04-25</span></h3>
-<h4>Title bar harmonization</h4>
-<p>Header now matches the canonical Wick suite spec, taller (32px), two-tone title (<code>Wick's</code> in fel-green, <code>Macro Builder</code> in cream, FRIZQT 14 outlined), bordered ✕ close button, fel-green underline at the bottom of the header, drag-by-header.</p>
 <p>No functional changes.</p></div><p style="color:var(--text-dim)">The full changelog is in <a href="https://github.com/Wicks-mods/WicksMacroBuilder/blob/main/CHANGELOG.md">the repository</a>.</p>
   <h2>More from the suite</h2>
   <div class="suite"><a href="/addons/wicks-bags/">Wick's Bags</a><a href="/addons/wicks-beasts-and-things/">Wick's Beasts and Things</a><a href="/addons/wicks-cd-tracker/">Wick's CD Tracker</a><a href="/addons/wicks-combat-log/">Wick's Combat Log</a><a href="/addons/wicks-comforts/">Wick's Comforts</a><a href="/addons/wicks-demons-and-things/">Wick's Demons and Things</a><a href="/addons/wicks-gear/">Wick's Gear</a><a href="/addons/wicks-ledger/">Wick's Ledger</a><a href="/addons/wicks-map/">Wick's Map</a><a href="/addons/wicks-poisons-and-things/">Wick's Poisons and Things</a><a href="/addons/wicks-quest-key/">Wick's Quest Key</a><a href="/addons/wicks-reminders/">Wick's Reminders</a><a href="/addons/wicks-seals-and-things/">Wick's Seals and Things</a><a href="/addons/wicks-stances-and-things/">Wick's Stances and Things</a><a href="/addons/wicks-stats/">Wick's Stats</a><a href="/addons/wicks-survivors/">Wick's Survivors</a><a href="/addons/wicks-tbc-bis-tracker/">Wick's TBC BIS Tracker</a><a href="/addons/wicks-totems-and-things/">Wick's Totems and Things</a><a href="/addons/trade-hall/">Wick's Trade Hall</a><a href="/addons/wicks-travel-form/">Wick's Travel Form</a><a href="/ui/">Wick's UI</a><a href="/addons/wicks-wardrobe/">Wick's Wardrobe</a></div>
